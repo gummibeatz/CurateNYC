@@ -1,0 +1,221 @@
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] INFO : Starting the New Relic agent in "development" environment.
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] WARN : No configuration file found. Working directory = /Users/christinaleuci/Programming/Curate/Curate
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] WARN : Looked in these locations (based on defaults): /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/.newrelic/newrelic.yml, /Users/christinaleuci/newrelic.yml
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] INFO : Environment: development
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] INFO : No known dispatcher detected.
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] INFO : Application: development
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] INFO : Installing ActiveRecord 4 instrumentation
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] INFO : Installing middleware-based Excon instrumentation
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] INFO : Installing HTTPClient instrumentation
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] INFO : Installing Net instrumentation
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] INFO : Installing deferred Rack instrumentation
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] INFO : Installing Rack::Builder middleware instrumentation
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] INFO : Installing Rails 3+ middleware instrumentation
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] INFO : Installing Rails 4 Controller instrumentation
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] INFO : Installing Rails 4 view instrumentation
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] INFO : Installing Rails 4 Error instrumentation
+[05/17/15 12:09:14 -0400 Christinas-Air.home (35944)] INFO : Finished instrumentation
+[05/17/15 12:09:15 -0400 Christinas-Air.home (35944)] INFO : Doing deferred dependency-detection before Rack startup
+[05/17/15 12:09:22 -0400 Christinas-Air.home (35944)] ERROR : Invalid license key, please contact support@newrelic.com
+[05/17/15 12:09:22 -0400 Christinas-Air.home (35944)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[05/17/15 12:09:57 -0400 Christinas-Air.home (35944)] INFO : Starting Agent shutdown
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] INFO : Starting the New Relic agent in "development" environment.
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] WARN : No configuration file found. Working directory = /Users/christinaleuci/Programming/Curate/Curate
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] WARN : Looked in these locations (based on defaults): /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/.newrelic/newrelic.yml, /Users/christinaleuci/newrelic.yml
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] INFO : Environment: development
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] INFO : No known dispatcher detected.
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] INFO : Application: development
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] INFO : Installing ActiveRecord 4 instrumentation
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] INFO : Installing middleware-based Excon instrumentation
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] INFO : Installing HTTPClient instrumentation
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] INFO : Installing Net instrumentation
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] INFO : Installing deferred Rack instrumentation
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] INFO : Installing Rack::Builder middleware instrumentation
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] INFO : Installing Rails 3+ middleware instrumentation
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] INFO : Installing Rails 4 Controller instrumentation
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] INFO : Installing Rails 4 view instrumentation
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] INFO : Installing Rails 4 Error instrumentation
+[05/17/15 12:10:28 -0400 Christinas-Air.home (35960)] INFO : Finished instrumentation
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : Starting the New Relic agent in "development" environment.
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] WARN : No configuration file found. Working directory = /Users/christinaleuci/Programming/Curate/Curate
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] WARN : Looked in these locations (based on defaults): /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/.newrelic/newrelic.yml, /Users/christinaleuci/newrelic.yml
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : Environment: development
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : No known dispatcher detected.
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : Application: development
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : Installing ActiveRecord 4 instrumentation
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : Installing middleware-based Excon instrumentation
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : Installing HTTPClient instrumentation
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : Installing Net instrumentation
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : Installing deferred Rack instrumentation
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : Installing Rack::Builder middleware instrumentation
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : Installing Rails 3+ middleware instrumentation
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : Installing Rails 4 Controller instrumentation
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : Installing Rails 4 view instrumentation
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : Installing Rails 4 Error instrumentation
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : Finished instrumentation
+[05/17/15 12:11:53 -0400 Christinas-Air.home (35968)] INFO : Doing deferred dependency-detection before Rack startup
+[05/17/15 12:11:58 -0400 Christinas-Air.home (35968)] ERROR : Invalid license key, please contact support@newrelic.com
+[05/17/15 12:11:58 -0400 Christinas-Air.home (35968)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[05/17/15 12:12:04 -0400 Christinas-Air.home (35968)] INFO : Starting Agent shutdown
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] INFO : Starting the New Relic agent in "development" environment.
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] WARN : No configuration file found. Working directory = /Users/christinaleuci/Programming/Curate/Curate
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] WARN : Looked in these locations (based on defaults): /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/.newrelic/newrelic.yml, /Users/christinaleuci/newrelic.yml
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] INFO : Environment: development
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] INFO : No known dispatcher detected.
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] INFO : Application: development
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] INFO : Installing ActiveRecord 4 instrumentation
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] INFO : Installing middleware-based Excon instrumentation
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] INFO : Installing HTTPClient instrumentation
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] INFO : Installing Net instrumentation
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] INFO : Installing deferred Rack instrumentation
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] INFO : Installing Rack::Builder middleware instrumentation
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] INFO : Installing Rails 3+ middleware instrumentation
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] INFO : Installing Rails 4 Controller instrumentation
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] INFO : Installing Rails 4 view instrumentation
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] INFO : Installing Rails 4 Error instrumentation
+[05/17/15 12:14:14 -0400 Christinas-Air.home (36000)] INFO : Finished instrumentation
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] INFO : Starting the New Relic agent in "development" environment.
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] WARN : No configuration file found. Working directory = /Users/christinaleuci/Programming/Curate/Curate
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] WARN : Looked in these locations (based on defaults): /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/.newrelic/newrelic.yml, /Users/christinaleuci/newrelic.yml
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] INFO : Environment: development
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] INFO : No known dispatcher detected.
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] INFO : Application: development
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] INFO : Installing ActiveRecord 4 instrumentation
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] INFO : Installing middleware-based Excon instrumentation
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] INFO : Installing HTTPClient instrumentation
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] INFO : Installing Net instrumentation
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] INFO : Installing deferred Rack instrumentation
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] INFO : Installing Rack::Builder middleware instrumentation
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] INFO : Installing Rails 3+ middleware instrumentation
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] INFO : Installing Rails 4 Controller instrumentation
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] INFO : Installing Rails 4 view instrumentation
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] INFO : Installing Rails 4 Error instrumentation
+[05/17/15 12:17:56 -0400 Christinas-Air.home (36028)] INFO : Finished instrumentation
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] INFO : Starting the New Relic agent in "development" environment.
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] WARN : No configuration file found. Working directory = /Users/christinaleuci/Programming/Curate/Curate
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] WARN : Looked in these locations (based on defaults): /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/.newrelic/newrelic.yml, /Users/christinaleuci/newrelic.yml
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] INFO : Environment: development
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] INFO : No known dispatcher detected.
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] INFO : Application: development
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] INFO : Installing ActiveRecord 4 instrumentation
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] INFO : Installing middleware-based Excon instrumentation
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] INFO : Installing HTTPClient instrumentation
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] INFO : Installing Net instrumentation
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] INFO : Installing deferred Rack instrumentation
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] INFO : Installing Rack::Builder middleware instrumentation
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] INFO : Installing Rails 3+ middleware instrumentation
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] INFO : Installing Rails 4 Controller instrumentation
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] INFO : Installing Rails 4 view instrumentation
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] INFO : Installing Rails 4 Error instrumentation
+[05/17/15 12:19:55 -0400 Christinas-Air.home (36066)] INFO : Finished instrumentation
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] INFO : Starting the New Relic agent in "development" environment.
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] WARN : No configuration file found. Working directory = /Users/christinaleuci/Programming/Curate/Curate
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] WARN : Looked in these locations (based on defaults): /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/.newrelic/newrelic.yml, /Users/christinaleuci/newrelic.yml
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] INFO : Environment: development
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] INFO : No known dispatcher detected.
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] INFO : Application: development
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] INFO : Installing ActiveRecord 4 instrumentation
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] INFO : Installing middleware-based Excon instrumentation
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] INFO : Installing HTTPClient instrumentation
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] INFO : Installing Net instrumentation
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] INFO : Installing deferred Rack instrumentation
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] INFO : Installing Rack::Builder middleware instrumentation
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] INFO : Installing Rails 3+ middleware instrumentation
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] INFO : Installing Rails 4 Controller instrumentation
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] INFO : Installing Rails 4 view instrumentation
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] INFO : Installing Rails 4 Error instrumentation
+[05/17/15 12:21:13 -0400 Christinas-Air.home (36071)] INFO : Finished instrumentation
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] INFO : Starting the New Relic agent in "development" environment.
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] WARN : No configuration file found. Working directory = /Users/christinaleuci/Programming/Curate/Curate
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] WARN : Looked in these locations (based on defaults): /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/.newrelic/newrelic.yml, /Users/christinaleuci/newrelic.yml
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] INFO : Environment: development
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] INFO : No known dispatcher detected.
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] INFO : Application: development
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] INFO : Installing ActiveRecord 4 instrumentation
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] INFO : Installing middleware-based Excon instrumentation
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] INFO : Installing HTTPClient instrumentation
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] INFO : Installing Net instrumentation
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] INFO : Installing deferred Rack instrumentation
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] INFO : Installing Rack::Builder middleware instrumentation
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] INFO : Installing Rails 3+ middleware instrumentation
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] INFO : Installing Rails 4 Controller instrumentation
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] INFO : Installing Rails 4 view instrumentation
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] INFO : Installing Rails 4 Error instrumentation
+[05/17/15 12:22:35 -0400 Christinas-Air.home (36076)] INFO : Finished instrumentation
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] INFO : Starting the New Relic agent in "development" environment.
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] WARN : No configuration file found. Working directory = /Users/christinaleuci/Programming/Curate/Curate
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] WARN : Looked in these locations (based on defaults): /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/.newrelic/newrelic.yml, /Users/christinaleuci/newrelic.yml
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] INFO : Environment: development
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] INFO : No known dispatcher detected.
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] INFO : Application: development
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] INFO : Installing ActiveRecord 4 instrumentation
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] INFO : Installing middleware-based Excon instrumentation
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] INFO : Installing HTTPClient instrumentation
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] INFO : Installing Net instrumentation
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] INFO : Installing deferred Rack instrumentation
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] INFO : Installing Rack::Builder middleware instrumentation
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] INFO : Installing Rails 3+ middleware instrumentation
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] INFO : Installing Rails 4 Controller instrumentation
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] INFO : Installing Rails 4 view instrumentation
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] INFO : Installing Rails 4 Error instrumentation
+[05/17/15 12:23:44 -0400 Christinas-Air.home (36084)] INFO : Finished instrumentation
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] INFO : Starting the New Relic agent in "development" environment.
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] WARN : No configuration file found. Working directory = /Users/christinaleuci/Programming/Curate/Curate
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] WARN : Looked in these locations (based on defaults): /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/.newrelic/newrelic.yml, /Users/christinaleuci/newrelic.yml
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] INFO : Environment: development
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] INFO : No known dispatcher detected.
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] INFO : Application: development
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] INFO : Installing ActiveRecord 4 instrumentation
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] INFO : Installing middleware-based Excon instrumentation
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] INFO : Installing HTTPClient instrumentation
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] INFO : Installing Net instrumentation
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] INFO : Installing deferred Rack instrumentation
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] INFO : Installing Rack::Builder middleware instrumentation
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] INFO : Installing Rails 3+ middleware instrumentation
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] INFO : Installing Rails 4 Controller instrumentation
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] INFO : Installing Rails 4 view instrumentation
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] INFO : Installing Rails 4 Error instrumentation
+[05/17/15 12:24:01 -0400 Christinas-Air.home (36100)] INFO : Finished instrumentation
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] INFO : Starting the New Relic agent in "development" environment.
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] WARN : No configuration file found. Working directory = /Users/christinaleuci/Programming/Curate/Curate
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] WARN : Looked in these locations (based on defaults): /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/config/newrelic.yml, /Users/christinaleuci/Programming/Curate/Curate/newrelic.yml, /Users/christinaleuci/.newrelic/newrelic.yml, /Users/christinaleuci/newrelic.yml
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] INFO : Environment: development
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] INFO : No known dispatcher detected.
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] INFO : Application: development
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] INFO : Installing ActiveRecord 4 instrumentation
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] INFO : Installing middleware-based Excon instrumentation
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] INFO : Installing HTTPClient instrumentation
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] INFO : Installing Net instrumentation
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] INFO : Installing deferred Rack instrumentation
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] INFO : Installing Rack::Builder middleware instrumentation
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] INFO : Installing Rails 3+ middleware instrumentation
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] INFO : Installing Rails 4 Controller instrumentation
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] INFO : Installing Rails 4 view instrumentation
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] INFO : Installing Rails 4 Error instrumentation
+[05/17/15 12:26:33 -0400 Christinas-Air.home (36111)] INFO : Finished instrumentation
+[05/17/15 12:26:34 -0400 Christinas-Air.home (36111)] INFO : Doing deferred dependency-detection before Rack startup
+[05/17/15 12:26:39 -0400 Christinas-Air.home (36111)] ERROR : Invalid license key, please contact support@newrelic.com
+[05/17/15 12:26:39 -0400 Christinas-Air.home (36111)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[05/17/15 12:26:49 -0400 Christinas-Air.home (36111)] INFO : Starting Agent shutdown
