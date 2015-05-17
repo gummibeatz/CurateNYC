@@ -4,45 +4,57 @@
 require File.expand_path('../config/application', __FILE__)
 Rails.application.load_tasks
 
+dbArray = JSON.parse(File.read(File.join(Rails.root, 'public', 'DatabaseArray.json'))) 
+
 desc "Read AWS" 
 task :read_aws => :environment do
   Tops.connection
-  @hash = {}
+  createClothesInSQLWithDatabase(dbArray)
+  addBatchAndURLInformation()
+end
+
+
+def createClothesInSQLWithDatabase(dbArray) 
+  dbArray.each do |main_category|
+    main_category.each do |obj|
+      clothing = JSON.parse(obj)
+      Tops.create({
+        batch_information: [], 
+        file_name: clothing["File_Name"], 
+        url: clothing[""],
+        properties: formatHashKeys(clothing["Properties"])
+      })
+    end
+    #only gonna do tops for now tkae out break later
+    # break
+  end
+end
+
+# Adds in batch information based on AWS buckets
+def addBatchAndURLInformation()
   AWS::S3.new.buckets['curateanalytics'].objects.each do |obj|
-    if (obj.key =~ /swipe batches/) && (obj.key =~ /jpg/)
-      @newfolder = obj.key.split("/")[1]
-      @newbatch = obj.key.split("/")[obj.key.split("/").length-2]
-      @newurl = "https://s3.amazonaws.com/curateanalytics/" + obj.key.gsub('&', '%26').gsub('swipe ', 'swipe+')
-      @filename = obj.key.split("/").last
-      @array = [@newfolder, @newbatch]
-      JSON.parse(File.read(File.join(Rails.root, 'public', 'DatabaseArray.json'))).each do |main|
-        main.each do |sub|
-          if sub.split("\"")[3] == obj.key.split("/").last
-            sub.gsub("\"","")[1..-2].split(",").each do |properties|
-              @property = properties.split(":")
-              if @property.first == "URL"
-                @hash.merge!(@property.first.parameterize.underscore.to_sym => @property.last)
-              elsif @property.first == "File_Name"
-                @hash.merge!(@property.first.parameterize.underscore.to_sym => @property.last)
-              elsif @property.second == "{Main_Category"
-                @hash.merge!(@property.second.parameterize.underscore.to_sym => @property.last)
-              else
-                @hash.merge!(@property.first.parameterize.underscore.to_sym => @property.last)
-              end
-            end
-            if Tops.where(file_name: @filename) == []
-              @number = @newbatch[-2..-1].to_i
-              Tops.create({:batch_information => [@array], :number => @number, :file_name => @newurl.split("/").last.gsub("%26","&"), :url => @newurl, :properties => @hash})
-            elsif !Tops.where(file_name: @filename).first.batch_information.include?(@array)
-              @top = Tops.where(file_name: @filename).first
-              @top.batch_information << @array
-              @top.save!
-            end
-          else
-            next
+    if(obj.key =~ /swipe batches/) && (obj.key =~ /jpg/)
+      folder = obj.key.split("/")[1]
+      batch = obj.key.split("/")[obj.key.split("/").length-2]
+          url = "https://s3.amazonaws.com/curateanalytics/" + obj.key.gsub('&', '%26').gsub('swipe ', 'swipe+')
+          filename = obj.key.split("/").last
+          array = [folder, batch]
+
+          if Tops.exists?(file_name: filename)
+            @top = Tops.find_by file_name: filename
+            @top.url = url
+            @top.batch_information << array
+            @top.save!
           end
-        end
-      end
     end
   end
+end
+
+# makes hash keys lowercase
+def formatHashKeys(hash)
+  new_hash = {}
+  hash.each_pair do |k,v|
+    new_hash["#{k.downcase}"] = v
+  end 
+  return new_hash
 end
