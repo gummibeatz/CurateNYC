@@ -19,14 +19,13 @@ def createClothesInSQLWithDatabase(dbArray)
     main_category.each do |obj|
       clothing = JSON.parse(obj)
       Tops.create({
-        batch_information: [], 
+        batch_information: [],
+        number: 1,
         file_name: clothing["File_Name"], 
         url: clothing[""],
         properties: formatHashKeys(clothing["Properties"])
       })
     end
-    #only gonna do tops for now tkae out break later
-    # break
   end
 end
 
@@ -36,16 +35,17 @@ def addBatchAndURLInformation()
     if(obj.key =~ /swipe batches/) && (obj.key =~ /jpg/)
       folder = obj.key.split("/")[1]
       batch = obj.key.split("/")[obj.key.split("/").length-2]
-          url = "https://s3.amazonaws.com/curateanalytics/" + obj.key.gsub('&', '%26').gsub('swipe ', 'swipe+')
-          filename = obj.key.split("/").last
-          array = [folder, batch]
-
-          if Tops.exists?(file_name: filename)
-            @top = Tops.find_by file_name: filename
-            @top.url = url
-            @top.batch_information << array
-            @top.save!
-          end
+      url = "https://s3.amazonaws.com/curateanalytics/" + obj.key.gsub('&', '%26').gsub('swipe ', 'swipe+')
+      filename = obj.key.split("/").last
+      array = [folder, batch]
+      number = batch[-2..-1].to_i
+        if Tops.exists?(file_name: filename)
+          @top = Tops.find_by file_name: filename
+          @top.url = url
+          @top.number = number
+          @top.batch_information << array
+          @top.save!
+        end
     end
   end
 end
