@@ -1,0 +1,11 @@
+<header>
+  <nav>
+    <!-- to user page -->
+      <%= image_tag current_user.image %>
+      <%= link_to "#{current_user.name}", current_user%>
+    <!-- facebook logout path -->
+      <% if current_user %>
+        <%= link_to "LOG OUT", logout_path %>
+      <% end %>
+  </nav>
+</header>

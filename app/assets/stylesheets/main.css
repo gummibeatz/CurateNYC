@@ -1,0 +1,66 @@
+.nav a {
+  color: #5a5a5a;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 14px 10px;
+  text-transform: uppercase;
+}
+
+.nav li {
+  display: inline;
+} 
+
+.jumbotron {
+  height: 660px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("CurateBackground.png");
+}
+
+.jumbotron .container {
+  position: relative;
+  top:100px;
+}
+
+.jumbotron h1 {
+  color: #000000;
+  font-size: 48px;  
+  font-family: 'Shift', Orator Std;
+  /*font-weight: bold;*/
+}
+
+.jumbotron p {
+  font-size: 20px;
+  color: #000000;
+  font-family: 'Shift', Orator Std;
+}
+
+.learn-more {
+  background-color: #ffffff;
+}
+
+.learn-more dt {
+  font-family: 'Shift', Sans-Serif;
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 40px;
+  padding-bottom: 5px;
+}
+
+.learn-more dd {
+  font-family:"Calibri (Body)";
+  font-size: 18px;
+  /*margin-left: 0px;*/
+}
+
+.after-signup h1 {
+  color: #000000;
+  font-size: 48px;  
+  font-family: 'Shift', Orator Std;
+}
+
+.after-signup p {
+  font-size: 20px;
+  color: #000000;
+  font-family: 'Shift', Orator Std;
+}

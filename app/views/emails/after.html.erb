@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+    <%= stylesheet_link_tag 'application.css' %>
+
+  </head>
+
+  <body>
+    <!--Facebook Script-->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=752609968166675&version=v2.3";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class = "after-signup"
+      <div class="container">
+        <div class = "text-center">
+            <h1>curate</h1>
+            <p>The future of men's fashion</p>
+        </div>
+    </div>
+    
+    <center>
+      <p>You're on the list. You're 
+        <%@user = Email.find_by_email(current_email)%>
+        <%=@user.id%>
+         in line,<br>
+         there are <%= Email.count - @user.id%> people behind you. <br><br>
+        The reservation is for <%=current_email%><br><br>
+        You can cut the line by sharing with your friends
+      </p>
+      <!--Twitter Button-->
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="CurateAnalytics" data-size="large" data-hashtags="CurateAnalytics">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+      <!--Facebook Button-->
+      <div class="fb-share-button" data-href="https://www.facebook.com/pages/Curate-Analytics/363003130555084?fref=ts" data-layout="button"></div>
+  </center>
+  </div>
+  </body>
+</html>
