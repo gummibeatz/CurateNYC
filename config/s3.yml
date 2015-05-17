@@ -1,0 +1,8 @@
+access_key_id: <%= ENV['AKIAIQQGKX5JSWOVPJXQ'] %>
+secret_access_key: <%= ENV['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'] %> 
+bucket: 'curateanalytics'
+
+# access_key_id: <%= ENV['AKIAIQQGKX5JSWOVPJXQ'] %>
+# secret_access_key: <%= ENV['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'] %>
+
+# heroku config:add S3_KEY=AKIAIQQGKX5JSWOVPJXQ S3_SECRET=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

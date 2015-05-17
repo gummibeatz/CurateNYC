@@ -1,0 +1,18 @@
+<wrapper>
+  <%= render 'layouts/header' %>
+</wrapper>
+<center>
+  <nav>
+    <%= link_to "Your Wardrobe", wardrobe_index_path%>
+    <%= link_to "Your Outfits", outfit_index_path%>
+    <%= link_to "Your Likes", like_index_path%>
+  </nav>
+  LIKE PAGE
+  <div class="box">
+    <div class="like">
+    </div>
+  </div>
+</center>
+<wrapper>
+  <%= render "application/footer.html.erb"%>
+</wrapper>

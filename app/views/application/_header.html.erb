@@ -1,0 +1,10 @@
+<header>
+  <nav>
+    <!-- about company-->
+    <%= link_to "About Us", about_path%>
+    <!-- Work -->
+    <%= link_to "How It Works", work_path%>
+    <!-- signin -->
+    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+  </nav>
+</header>
