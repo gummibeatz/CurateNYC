@@ -46,8 +46,6 @@ def addBatchAndURLInformation(shouldTest = false)
       filename = obj.key.split("/").last
       array = [folder, batch]
       number = batch.split('_')[1].to_i
-      puts filename
-      puts Tops.exists?(file_name: filename)
       if (!Tops.exists?(file_name: filename) && shouldTest == true)
         missingitems.add(filename)
       elsif Tops.exists?(file_name: filename)
