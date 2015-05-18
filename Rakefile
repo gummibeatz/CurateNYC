@@ -1,6 +1,6 @@
 # Add your own tasks in files placed in lib/tasks ending in .rake,
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
-
+require 'set'
 require File.expand_path('../config/application', __FILE__)
 Rails.application.load_tasks
 
@@ -13,6 +13,12 @@ task :read_aws => :environment do
   addBatchAndURLInformation()
 end
 
+desc "Check AWS"
+task :check_aws => :environment do
+  Tops.connection
+  addBatchAndURLInformation(true)
+end
+
 
 def createClothesInSQLWithDatabase(dbArray) 
   dbArray.each do |main_category|
@@ -20,7 +26,7 @@ def createClothesInSQLWithDatabase(dbArray)
       clothing = JSON.parse(obj)
       Tops.create({
         batch_information: [],
-        number: 1,
+        number: 0,
         file_name: clothing["File_Name"], 
         url: clothing[""],
         properties: formatHashKeys(clothing["Properties"])
@@ -30,7 +36,8 @@ def createClothesInSQLWithDatabase(dbArray)
 end
 
 # Adds in batch information based on AWS buckets
-def addBatchAndURLInformation()
+def addBatchAndURLInformation(shouldTest = false)
+  missingitems = Set.new
   AWS::S3.new.buckets['curateanalytics'].objects.each do |obj|
     if(obj.key =~ /swipe batches/) && (obj.key =~ /jpg/)
       folder = obj.key.split("/")[1]
@@ -38,14 +45,26 @@ def addBatchAndURLInformation()
       url = "https://s3.amazonaws.com/curateanalytics/" + obj.key.gsub('&', '%26').gsub('swipe ', 'swipe+')
       filename = obj.key.split("/").last
       array = [folder, batch]
-      number = batch[-2..-1].to_i
-        if Tops.exists?(file_name: filename)
-          @top = Tops.find_by file_name: filename
-          @top.url = url
-          @top.number = number
-          @top.batch_information << array
-          @top.save!
-        end
+      number = batch.split('_')[1].to_i
+      puts filename
+      puts Tops.exists?(file_name: filename)
+      if (!Tops.exists?(file_name: filename) && shouldTest == true)
+        missingitems.add(filename)
+      end
+      if Tops.exists?(file_name: filename)
+        @top = Tops.find_by file_name: filename
+        @top.url = url
+        @top.number = number
+        @top.batch_information << array
+        @top.save!
+      end
+    end
+  end
+  if shouldTest == true
+    File.open("missingClothes.txt", 'w') do |f|
+      missingitems.each do |item|
+        f.puts(item)
+      end
     end
   end
 end

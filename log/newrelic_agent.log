@@ -4066,3 +4066,399 @@
 [05/17/15 17:05:09 -0400 linus-K55A (19241)] ERROR : Invalid license key, please contact support@newrelic.com
 [05/17/15 17:05:09 -0400 linus-K55A (19241)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
 [05/17/15 17:05:23 -0400 linus-K55A (19241)] INFO : Starting Agent shutdown
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] INFO : Starting the New Relic agent in "development" environment.
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] INFO : Environment: development
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] INFO : No known dispatcher detected.
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] INFO : Application: development
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] INFO : Installing ActiveRecord 4 instrumentation
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] INFO : Installing middleware-based Excon instrumentation
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] INFO : Installing HTTPClient instrumentation
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] INFO : Installing Net instrumentation
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] INFO : Installing Rails 3+ middleware instrumentation
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] INFO : Installing deferred Rack instrumentation
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] INFO : Installing Rack::Builder middleware instrumentation
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] INFO : Installing Rails 4 Controller instrumentation
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] INFO : Installing Rails 4 view instrumentation
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] INFO : Installing Rails 4 Error instrumentation
+[05/17/15 17:39:01 -0400 linus-K55A (20347)] INFO : Finished instrumentation
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] INFO : Starting the New Relic agent in "development" environment.
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] INFO : Environment: development
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] INFO : No known dispatcher detected.
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] INFO : Application: development
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] INFO : Installing ActiveRecord 4 instrumentation
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] INFO : Installing middleware-based Excon instrumentation
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] INFO : Installing HTTPClient instrumentation
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] INFO : Installing Net instrumentation
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] INFO : Installing Rails 3+ middleware instrumentation
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] INFO : Installing deferred Rack instrumentation
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] INFO : Installing Rack::Builder middleware instrumentation
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] INFO : Installing Rails 4 Controller instrumentation
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] INFO : Installing Rails 4 view instrumentation
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] INFO : Installing Rails 4 Error instrumentation
+[05/17/15 19:48:59 -0400 linus-K55A (22599)] INFO : Finished instrumentation
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : Environment: development
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : No known dispatcher detected.
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : Application: development
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : Installing HTTPClient instrumentation
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : Installing Net instrumentation
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : Installing deferred Rack instrumentation
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : Finished instrumentation
+[05/18/15 10:51:07 -0400 linus-K55A (31131)] INFO : Doing deferred dependency-detection before Rack startup
+[05/18/15 10:51:14 -0400 linus-K55A (31131)] ERROR : Invalid license key, please contact support@newrelic.com
+[05/18/15 10:51:14 -0400 linus-K55A (31131)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[05/18/15 10:53:04 -0400 linus-K55A (31131)] INFO : Starting Agent shutdown
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] INFO : Environment: development
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] INFO : No known dispatcher detected.
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] INFO : Application: development
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] INFO : Installing HTTPClient instrumentation
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] INFO : Installing Net instrumentation
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] INFO : Installing deferred Rack instrumentation
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 10:55:56 -0400 linus-K55A (31373)] INFO : Finished instrumentation
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : Environment: development
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : No known dispatcher detected.
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : Application: development
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : Installing HTTPClient instrumentation
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : Installing Net instrumentation
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : Installing deferred Rack instrumentation
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : Finished instrumentation
+[05/18/15 10:57:25 -0400 linus-K55A (31691)] INFO : Doing deferred dependency-detection before Rack startup
+[05/18/15 10:57:29 -0400 linus-K55A (31691)] ERROR : Invalid license key, please contact support@newrelic.com
+[05/18/15 10:57:29 -0400 linus-K55A (31691)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[05/18/15 10:57:40 -0400 linus-K55A (31691)] INFO : Starting Agent shutdown
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] INFO : Environment: development
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] INFO : No known dispatcher detected.
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] INFO : Application: development
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] INFO : Installing HTTPClient instrumentation
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] INFO : Installing Net instrumentation
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] INFO : Installing deferred Rack instrumentation
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 10:57:48 -0400 linus-K55A (31745)] INFO : Finished instrumentation
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : Environment: development
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : No known dispatcher detected.
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : Application: development
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : Installing HTTPClient instrumentation
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : Installing Net instrumentation
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : Installing deferred Rack instrumentation
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : Finished instrumentation
+[05/18/15 11:10:57 -0400 linus-K55A (32425)] INFO : Doing deferred dependency-detection before Rack startup
+[05/18/15 11:11:00 -0400 linus-K55A (32425)] ERROR : Invalid license key, please contact support@newrelic.com
+[05/18/15 11:11:00 -0400 linus-K55A (32425)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[05/18/15 11:14:23 -0400 linus-K55A (32425)] INFO : Starting Agent shutdown
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] INFO : Environment: development
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] INFO : No known dispatcher detected.
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] INFO : Application: development
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] INFO : Installing HTTPClient instrumentation
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] INFO : Installing Net instrumentation
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] INFO : Installing deferred Rack instrumentation
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 11:14:40 -0400 linus-K55A (32483)] INFO : Finished instrumentation
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] INFO : Environment: development
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] INFO : No known dispatcher detected.
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] INFO : Application: development
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] INFO : Installing HTTPClient instrumentation
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] INFO : Installing Net instrumentation
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] INFO : Installing deferred Rack instrumentation
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 11:18:23 -0400 linus-K55A (32527)] INFO : Finished instrumentation
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : Environment: development
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : No known dispatcher detected.
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : Application: development
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : Installing HTTPClient instrumentation
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : Installing Net instrumentation
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : Installing deferred Rack instrumentation
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : Finished instrumentation
+[05/18/15 11:29:52 -0400 linus-K55A (32736)] INFO : Doing deferred dependency-detection before Rack startup
+[05/18/15 11:30:02 -0400 linus-K55A (32736)] ERROR : Invalid license key, please contact support@newrelic.com
+[05/18/15 11:30:02 -0400 linus-K55A (32736)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[05/18/15 11:32:42 -0400 linus-K55A (32736)] INFO : Starting Agent shutdown
+[05/18/15 11:45:17 -0400 linus-K55A (918)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 11:45:17 -0400 linus-K55A (918)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 11:45:17 -0400 linus-K55A (918)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 11:45:17 -0400 linus-K55A (918)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 11:45:17 -0400 linus-K55A (918)] INFO : Environment: development
+[05/18/15 11:45:17 -0400 linus-K55A (918)] INFO : No known dispatcher detected.
+[05/18/15 11:45:17 -0400 linus-K55A (918)] INFO : Application: development
+[05/18/15 11:45:17 -0400 linus-K55A (918)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 11:45:17 -0400 linus-K55A (918)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 11:45:17 -0400 linus-K55A (918)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 11:45:17 -0400 linus-K55A (918)] INFO : Installing HTTPClient instrumentation
+[05/18/15 11:45:17 -0400 linus-K55A (918)] INFO : Installing Net instrumentation
+[05/18/15 11:45:17 -0400 linus-K55A (918)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 11:45:17 -0400 linus-K55A (918)] INFO : Installing deferred Rack instrumentation
+[05/18/15 11:45:17 -0400 linus-K55A (918)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 11:45:17 -0400 linus-K55A (918)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 11:45:17 -0400 linus-K55A (918)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 11:45:17 -0400 linus-K55A (918)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 11:45:17 -0400 linus-K55A (918)] INFO : Finished instrumentation
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] INFO : Environment: development
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] INFO : No known dispatcher detected.
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] INFO : Application: development
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] INFO : Installing HTTPClient instrumentation
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] INFO : Installing Net instrumentation
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] INFO : Installing deferred Rack instrumentation
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 12:15:28 -0400 linus-K55A (1792)] INFO : Finished instrumentation
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] INFO : Environment: development
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] INFO : No known dispatcher detected.
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] INFO : Application: development
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] INFO : Installing HTTPClient instrumentation
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] INFO : Installing Net instrumentation
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] INFO : Installing deferred Rack instrumentation
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 12:19:11 -0400 linus-K55A (1839)] INFO : Finished instrumentation
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] INFO : Environment: development
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] INFO : No known dispatcher detected.
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] INFO : Application: development
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] INFO : Installing HTTPClient instrumentation
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] INFO : Installing Net instrumentation
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] INFO : Installing deferred Rack instrumentation
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 12:19:36 -0400 linus-K55A (1845)] INFO : Finished instrumentation
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] INFO : Environment: development
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] INFO : No known dispatcher detected.
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] INFO : Application: development
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] INFO : Installing HTTPClient instrumentation
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] INFO : Installing Net instrumentation
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] INFO : Installing deferred Rack instrumentation
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 12:24:17 -0400 linus-K55A (1900)] INFO : Finished instrumentation
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] INFO : Environment: development
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] INFO : No known dispatcher detected.
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] INFO : Application: development
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] INFO : Installing HTTPClient instrumentation
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] INFO : Installing Net instrumentation
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] INFO : Installing deferred Rack instrumentation
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 13:37:52 -0400 linus-K55A (2976)] INFO : Finished instrumentation
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] INFO : Environment: development
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] INFO : No known dispatcher detected.
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] INFO : Application: development
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] INFO : Installing HTTPClient instrumentation
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] INFO : Installing Net instrumentation
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] INFO : Installing deferred Rack instrumentation
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 13:38:03 -0400 linus-K55A (2981)] INFO : Finished instrumentation
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] INFO : Environment: development
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] INFO : No known dispatcher detected.
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] INFO : Application: development
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] INFO : Installing HTTPClient instrumentation
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] INFO : Installing Net instrumentation
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] INFO : Installing deferred Rack instrumentation
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 13:51:27 -0400 linus-K55A (3218)] INFO : Finished instrumentation
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] INFO : Environment: development
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] INFO : No known dispatcher detected.
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] INFO : Application: development
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] INFO : Installing HTTPClient instrumentation
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] INFO : Installing Net instrumentation
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] INFO : Installing deferred Rack instrumentation
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 13:57:16 -0400 linus-K55A (3529)] INFO : Finished instrumentation
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] INFO : Starting the New Relic agent in "development" environment.
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] WARN : No configuration file found. Working directory = /home/linus/Projects/rails_apps/RailsBackend
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] WARN : Looked in these locations (based on defaults): /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/config/newrelic.yml, /home/linus/Projects/rails_apps/RailsBackend/newrelic.yml, /home/linus/.newrelic/newrelic.yml, /home/linus/newrelic.yml
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] INFO : Environment: development
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] INFO : No known dispatcher detected.
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] INFO : Application: development
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] INFO : Installing ActiveRecord 4 instrumentation
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] INFO : Installing middleware-based Excon instrumentation
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] INFO : Installing HTTPClient instrumentation
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] INFO : Installing Net instrumentation
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] INFO : Installing Rails 3+ middleware instrumentation
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] INFO : Installing deferred Rack instrumentation
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] INFO : Installing Rack::Builder middleware instrumentation
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] INFO : Installing Rails 4 Controller instrumentation
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] INFO : Installing Rails 4 view instrumentation
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] INFO : Installing Rails 4 Error instrumentation
+[05/18/15 13:57:44 -0400 linus-K55A (3556)] INFO : Finished instrumentation
