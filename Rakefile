@@ -20,9 +20,9 @@ def createClothesInSQLWithDatabase(dbArray)
       clothing = JSON.parse(obj)
       Tops.create({
         batch_information: [],
-        number: 1,
-        file_name: clothing["File_Name"], 
-        url: clothing[""],
+        number: 0,
+        file_name: clothing["File_Name"],
+        url: "",
         properties: formatHashKeys(clothing["Properties"])
       })
     end
@@ -39,13 +39,13 @@ def addBatchAndURLInformation()
       filename = obj.key.split("/").last
       array = [folder, batch]
       number = batch[-2..-1].to_i
-        if Tops.exists?(file_name: filename)
-          @top = Tops.find_by file_name: filename
-          @top.url = url
-          @top.number = number
-          @top.batch_information << array
-          @top.save!
-        end
+      if Tops.exists?(file_name: filename)
+        @top = Tops.find_by file_name: filename
+        @top.url = url
+        @top.number = number
+        @top.batch_information << array
+        @top.save!
+      end
     end
   end
 end
