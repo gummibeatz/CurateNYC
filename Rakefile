@@ -27,8 +27,8 @@ def createClothesInSQLWithDatabase(dbArray)
       Tops.create({
         batch_information: [],
         number: 0,
-        file_name: clothing["File_Name"], 
-        url: clothing[""],
+        file_name: clothing["File_Name"],
+        url: "",
         properties: formatHashKeys(clothing["Properties"])
       })
     end
@@ -50,8 +50,7 @@ def addBatchAndURLInformation(shouldTest = false)
       puts Tops.exists?(file_name: filename)
       if (!Tops.exists?(file_name: filename) && shouldTest == true)
         missingitems.add(filename)
-      end
-      if Tops.exists?(file_name: filename)
+      elsif Tops.exists?(file_name: filename)
         @top = Tops.find_by file_name: filename
         @top.url = url
         @top.number = number
