@@ -8,14 +8,14 @@ dbArray = JSON.parse(File.read(File.join(Rails.root, 'public', 'DatabaseArray.js
 
 desc "Read AWS" 
 task :read_aws => :environment do
-  Tops.connection
+  Clothing.connection
   createClothesInSQLWithDatabase(dbArray)
   addBatchAndURLInformation()
 end
 
 desc "Check AWS"
 task :check_aws => :environment do
-  Tops.connection
+  Clothing.connection
   addBatchAndURLInformation(true)
 end
 
@@ -24,7 +24,7 @@ def createClothesInSQLWithDatabase(dbArray)
   dbArray.each do |main_category|
     main_category.each do |obj|
       clothing = JSON.parse(obj)
-      Tops.create({
+      Clothing.create({
         batch_information: [],
         number: 0,
         file_name: clothing["File_Name"],
@@ -46,10 +46,10 @@ def addBatchAndURLInformation(shouldTest = false)
       filename = obj.key.split("/").last
       array = [folder, batch]
       number = batch.split('_')[1].to_i
-      if (!Tops.exists?(file_name: filename) && shouldTest == true)
+      if (!Clothing.exists?(file_name: filename) && shouldTest == true)
         missingitems.add(filename)
-      elsif Tops.exists?(file_name: filename)
-        @top = Tops.find_by file_name: filename
+      elsif Clothing.exists?(file_name: filename)
+        @top = Clothing.find_by file_name: filename
         @top.url = url
         @top.number = number
         @top.batch_information << array

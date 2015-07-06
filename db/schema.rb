@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20150417184449) do
 
+  create_table "clothings", force: true do |t|
+    t.text    "batch_information", default: "--- {}\n"
+    t.integer "number"
+    t.string  "file_name"
+    t.string  "url"
+    t.text    "properties"
+  end
+
   create_table "emails", force: true do |t|
     t.string   "email"
     t.datetime "created_at"
@@ -33,14 +41,6 @@ ActiveRecord::Schema.define(version: 20150417184449) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "outfits"
-  end
-
-  create_table "tops", force: true do |t|
-    t.text    "batch_information", default: "--- {}\n"
-    t.integer "number"
-    t.string  "file_name"
-    t.string  "url"
-    t.text    "properties"
   end
 
   create_table "users", force: true do |t|
