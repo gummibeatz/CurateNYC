@@ -55,13 +55,12 @@ class Api::V1::WardrobeController < Api::ApiController
        
        formatter = PreJavaFormatter.new(params[:temperature],params[:base_clothing],
           wardrobe.wardrobe[:tops], wardrobe.wardrobe[:bottoms])
-        
         javaParams = formatter.formatJavaParams
-        javaParams.each do |param|
-          logger.info(param)
-          v = `java -cp ./java_algos ScoringAlgo #{param}`
-          logger.info(v)
-        end
+
+        base_clothing = Clothing.where(file_name: params[:base_clothing]).first
+        javaRunner = JavaRunner.new(javaParams, base_clothing)
+        logger.info(javaRunner.run)
+        
         render :status => 200,
                :json => wardrobe.wardrobe
       else
