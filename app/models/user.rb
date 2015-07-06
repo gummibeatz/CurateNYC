@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
   has_one :wardrobe
   serialize :preferences
   before_save :ensure_authentication_token
-  after_save :create_wardrobe, :create_outfit, :create_like
+  after_save  :create_outfit, :create_like
+  after_create :create_wardrobe
  
   def ensure_authentication_token
     if authentication_token.blank?
