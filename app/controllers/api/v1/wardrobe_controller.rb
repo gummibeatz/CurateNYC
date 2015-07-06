@@ -53,12 +53,15 @@ class Api::V1::WardrobeController < Api::ApiController
       if Wardrobe.find_by_authentication_token(authentication_token = params[:authentication_token])
         wardrobe = Wardrobe.find_by_authentication_token(authentication_token = params[:authentication_token])
        
-       formatter = Formatter.new(params[:temperature],params[:base_clothing],
+       formatter = PreJavaFormatter.new(params[:temperature],params[:base_clothing],
           wardrobe.wardrobe[:tops], wardrobe.wardrobe[:bottoms])
         
-        logger.info(formatter.formatJavaParams)  
-        v = `java -cp ./java_algos ScoringAlgo warm bottoms red 0 2 blue green 1 yellow 0`
-        logger.info(v)
+        javaParams = formatter.formatJavaParams
+        javaParams.each do |param|
+          logger.info(param)
+          v = `java -cp ./java_algos ScoringAlgo #{param}`
+          logger.info(v)
+        end
         render :status => 200,
                :json => wardrobe.wardrobe
       else
