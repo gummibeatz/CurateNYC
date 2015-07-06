@@ -4,7 +4,7 @@ class Api::V1::BatchController < Api::ApiController
 
   def index
     @array = []
-    if Tops.count > 1
+    if Clothing.count > 1
       if params[:batch_folder] != nil
         for i in (1..18)
           # check to see if it's of the correct batch folder
@@ -13,7 +13,7 @@ class Api::V1::BatchController < Api::ApiController
         end
         render json: @array
       else
-        render json: Tops.all
+        render json: Clothing.all
       end
     else
       logger.info("Oh damn the batches aren't here! Call Christina!")
@@ -26,10 +26,10 @@ class Api::V1::BatchController < Api::ApiController
   # to search in sql db
   def findClothesWithBatchFolder(num,batch_folder)
     clothes =[]
-    Tops.where(number: num).each do |top|
-      top.batch_information.each do |batch_type|
+    Clothing.where(number: num).each do |clothing|
+      clothing.batch_information.each do |batch_type|
         if batch_type.include?(batch_folder)
-          clothes.push(top)
+          clothes.push(clothing)
           break
         end
       end
