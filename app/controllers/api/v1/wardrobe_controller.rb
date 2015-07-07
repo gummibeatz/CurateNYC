@@ -53,37 +53,31 @@ class Api::V1::WardrobeController < Api::ApiController
       if Wardrobe.find_by_authentication_token(authentication_token = params[:authentication_token])
         wardrobe = Wardrobe.find_by_authentication_token(authentication_token = params[:authentication_token])
        
+        color_translator = ColorTranslator.new()
+
        formatter = PreJavaFormatter.new(params[:temperature],params[:base_clothing],
-          wardrobe.wardrobe[:tops], wardrobe.wardrobe[:bottoms])
+          wardrobe.wardrobe[:tops], wardrobe.wardrobe[:bottoms], color_translator)
         javaParams = formatter.formatJavaParams
 
         base_clothing = Clothing.where(file_name: params[:base_clothing]).first
-        javaRunner = JavaRunner.new(javaParams, base_clothing)
-        logger.info(javaRunner.run)
+        javaRunner = JavaRunner.new(javaParams, base_clothing, wardrobe.wardrobe[:tops], 
+          wardrobe.wardrobe[:bottoms], color_translator)
+        result = javaRunner.run
+        if result.eql? "NA"
+          render :status => 200,
+                 :json => {:matches => "NA", :message => "NA"}
+        else
+        matches = {:matches => result, :message => "Success"}
         
         render :status => 200,
-               :json => wardrobe.wardrobe
+               :json => matches
+        end
       else
         logger.info("Failed connection to wardrobe/matches json, a wardrobe cannot be found by that authentication_token.")
         render :status =>400,
                :json=>{:message=>"Failed connection to wardrobe/edit json, a wardrobe cannot be found by that authentication_token."}
       end
-    # else
-    #   v = `java NaiveAlgo #{params[:color].downcase.capitalize} #{params[:style].downcase.capitalize}`
-    #   logger.info("Successful connection to Naive Algorithm.")
-    #   render :status => 200,
-    #          :json => create_match_json(v.split(",\n"), params[:style])
     end
   end
 
-  private
-  def create_match_json(array, style)
-    @json = {"original_clothing_category" => style,
-            "outfit_pairings"=> []
-            }
-    array.each do |matches|
-      @json["outfit_pairings"] << {"top" => matches.split(",").first, "bottom" => matches.split(",").second}
-    end
-    return @json
-  end
 end
