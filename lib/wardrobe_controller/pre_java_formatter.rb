@@ -164,7 +164,7 @@ class PreJavaFormatter
 	# double checks that color_1 is actually a color
 	# and returns the correct 
 	def checkColors(clothing, isHash)
-		# puts clothing[:properties][:color_1]
+		puts ("in checkColors, color = #{clothing[:properties][:color_1]"}
 		if isHash
 			if clothing[:properties][:color_1].downcase.eql? "printed" ||
 				"check" || "gingham" || "striped" || "dots" || "light wash" ||
