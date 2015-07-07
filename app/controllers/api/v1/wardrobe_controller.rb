@@ -53,7 +53,7 @@ class Api::V1::WardrobeController < Api::ApiController
       if Wardrobe.find_by_authentication_token(authentication_token = params[:authentication_token])
         wardrobe = Wardrobe.find_by_authentication_token(authentication_token = params[:authentication_token])
        
-        color_translator = Api::V1::WardrobeController::ColorTranslator.new()
+        color_translator = ColorTranslator.new()
        formatter = PreJavaFormatter.new(params[:temperature],params[:base_clothing],
           wardrobe.wardrobe[:tops], wardrobe.wardrobe[:bottoms], color_translator)
         javaParams = formatter.formatJavaParams
