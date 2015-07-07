@@ -62,17 +62,17 @@ class Api::V1::WardrobeController < Api::ApiController
           wardrobe.wardrobe[:bottoms], color_translator)
         result = javaRunner.run
         if result.eql? "NA"
-          render :status => 200,
-                 :json => {:matches => "NA", :message => "NA"}
+          render :status=>200,
+                 :json=>{:matches => "NA", :message => "NA"}
         else
         matches = {:matches => result, :message => "Success"}
         
-        render :status => 200,
-               :json => matches
+        render :status=>200,
+               :json=>matches
         end
       else
         logger.info("Failed connection to wardrobe/matches json, a wardrobe cannot be found by that authentication_token.")
-        render :status =>400,
+        render :status=>400,
                :json=>{:message=>"Failed connection to wardrobe/edit json, a wardrobe cannot be found by that authentication_token."}
       end
     end
