@@ -9,6 +9,7 @@ class PreJavaFormatter
 		@base_clothing = base_clothing
 		@base_category = Clothing.where(file_name: @base_clothing).first[:properties]["main_category"]
 		@color_translator = color_translator
+		@bad_colors = ["printed","check","gingham","striped","dots","light wash", "chambray", "acid wash"]
 	end
 
 	def formatJavaParams()
@@ -78,7 +79,7 @@ class PreJavaFormatter
 	end
 
 	def formatLayer2(layer, layer1_cat)
-		puts @base_category
+		puts "base_category = #{@base_category}"
 		if layer.eql? "l2"
 			return "0 "
 		else
@@ -158,6 +159,7 @@ class PreJavaFormatter
 	# generalizes colors down to colors in the scoringCSVs
 	def generalizeColors(clothing, isHash = false)
 		color = checkColors(clothing, isHash).downcase.tr(' ', '_')
+		puts "in generalizeColors, color =#{color}"
 		return @color_translator.generalize(color)
 	end
 
@@ -165,18 +167,14 @@ class PreJavaFormatter
 	# and returns the correct 
 	def checkColors(clothing, isHash)
 		puts "in checkColors, color = #{clothing[:properties][:color_1]} \n \
-		       clothing = #{clothing[:properties][:file_name]}"
+		       file_name = #{clothing[:file_name]}"
 		if clothing[:properties][:color_1]
-			if clothing[:properties][:color_1].downcase.eql? "printed" ||
-				"check" || "gingham" || "striped" || "dots" || "light wash" ||
-				"chambray" || "acid wash"
+			if @bad_colors.include? clothing[:properties][:color_1].downcase
 				return clothing[:properties][:color_2]
 			end
 			return clothing[:properties][:color_1]
 		else
-			if clothing[:properties]["color_1"].downcase.eql? "printed" ||
-				"check" || "gingham" || "striped" || "dots" || "light wash" ||
-				"chambray" || "acid wash"
+			if @bad_colors.include? clothing[:properties]["color_1"].downcase
 				return clothing[:properties]["color_2"]
 			end
 			return clothing[:properties]["color_1"]

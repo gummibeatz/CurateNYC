@@ -6,8 +6,7 @@ class ColorTranslator
 	end
 
 	def generalize(color)
-		puts "in generalize"
-		puts "color = " + color
+		puts "in generalize, color = #{color}\n========="
 		return @color_translator[color].first
 	end
 

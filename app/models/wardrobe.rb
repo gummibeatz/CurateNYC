@@ -18,6 +18,9 @@ class Wardrobe < ActiveRecord::Base
      },{:file_name => "",
       :url => "https://s3.amazonaws.com/curateanalytics/tops/shirt/collared/chambray/slim/Uniqlo.Chambray.Slim.Printed.Gray.jpg",
       :properties => {}
+     },{:file_name => "",
+      :url => "https://s3.amazonaws.com/curateanalytics/tops/shirt/collared/cutaway+collar/slim/Uniqlo.CutawayCollar.Slim.Check.Gray.jpg",
+      :properties => {}
      }],
      :bottoms => [{:file_name => "",
       :url => "http://s3.amazonaws.com/curateanalytics/bottoms/pants/5pocket%20pants/regular/H&M_5-Pocket_Regular_Black.jpg",
