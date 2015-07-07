@@ -57,7 +57,6 @@ class Api::V1::WardrobeController < Api::ApiController
        formatter = PreJavaFormatter.new(params[:temperature],params[:base_clothing],
           wardrobe.wardrobe[:tops], wardrobe.wardrobe[:bottoms], color_translator)
         javaParams = formatter.formatJavaParams
-
         base_clothing = Clothing.where(file_name: params[:base_clothing]).first
         javaRunner = JavaRunner.new(javaParams, base_clothing, wardrobe.wardrobe[:tops], 
           wardrobe.wardrobe[:bottoms], color_translator)

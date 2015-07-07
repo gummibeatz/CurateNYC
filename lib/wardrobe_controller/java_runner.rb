@@ -2,7 +2,8 @@ class JavaRunner
 
 	def initialize(java_params, base_clothing, tops, bottoms, color_translator)
 		@java_params = java_params
-		@base_clothing = base_clothing
+    @base_clothing = base_clothing
+		@base_file_name = base_clothing[:file_name]
 		@tops = tops
 		@bottoms = bottoms
     @color_translator = color_translator
@@ -10,33 +11,34 @@ class JavaRunner
 
 	def run
 		outfits = []
-		output = "" 
+
 		@java_params.each do |param|
       v = `java -cp ./java_algos ScoringAlgo #{param}`
-      layer = param.split(' ')[1]
+      orig_layer = param.split(' ')[1]
 
       # puts layer
       puts param
 
       # if no results and if the base clothes was run as a first layer
       # then try again with lowest degree of matches(2)
-      if v.empty? and ((layer.eql? "l1") or (layer.eql? "bottoms"))
+      if v.empty? and ((orig_layer.eql? "l1") or (orig_layer.eql? "bottoms"))
         puts "rerunning due to no results on first run as l1"
         v = `java -cp ./java_algos ScoringAlgo #{reformatForMatch2(param)}`
       end
-      output << v 
+      
+      if !v.empty?
+        for out in v.split("\n")
+          results = assembleOutfits(out, orig_layer)
+          if results then outfits << results end
+        end
+      end
     end
 
-    if output.empty?
+    if outfits.empty?
       return "NA"
     end
-
-    for out in output.split("\n")
-    	outfits<<assembleOutfits(out)
-      # outfits.flatten!(1)
-    end
-
     return outfits
+
 	end
 
 	private
@@ -46,7 +48,7 @@ class JavaRunner
 		return param.split(' ')[1..-1].join(' ').prepend("hot ")
   end
 
-	def assembleOutfits(out)
+	def assembleOutfits(out, orig_layer)
     puts"in assemble outfits \n========\n\n"
 		score = out.split(' ')[0]
 	 	colors = out.split(' ')[1..-1]
@@ -61,20 +63,52 @@ class JavaRunner
     bottoms = getClothesWithAttributes(bottom_colors,"bottoms")
 	  l1s = getClothesWithAttributes(l1_colors,"l1")
     l2s = getClothesWithAttributes(l2_colors,"l2")
-
     outfits = []
-    for b in bottoms
+    print("bottoms are #{bottoms}\n")
+    print("l1s are #{l1s}\n")
+    print("l2s are #{l2s}\n")
+
+    case orig_layer
+    when "bottoms"
       for l1 in l1s
-        if l2s.count>0
+        category = Clothing.where(file_name: l1).first[:properties]["main_category"].downcase
+        if l2s.count>0 and !category.eql? "light layer"
           for l2 in l2s
-            outfit = [b,l1,l2]
+            outfit = [@base_file_name, l1, l2]
             outfits << outfit
           end
         else
-          outfit = [b,l1]
+          outfit = [@base_file_name, l1, "NA"]
           outfits << outfit
         end
       end
+    when "l1"
+      category = @base_clothing[:properties]["main_category"].downcase
+      for b in bottoms
+        if l2s.count>0 and !category.eql? "light layer"
+          for l2 in l2s
+            outfit = [b,@base_file_name,l2]
+            outfits << outfit
+          end
+        else
+          outfit = [b, @base_file_name, "NA"]
+          outfits << outfit
+        end
+      end
+    when "l2"
+      for b in bottoms
+        for l1 in l1s
+          category = Clothing.where(file_name: l1).first[:properties]["main_category"].downcase
+          # don't want light layer under anything
+          if !category.eql? "light layer"
+            outfit = [b,l1,@base_file_name]
+            outfits << outfit
+          end
+        end
+      end
+    end
+    if outfits.empty?
+      return nil
     end
     matches[:outfits] = outfits
     return matches
@@ -91,13 +125,15 @@ class JavaRunner
       end
     when "l1"
       @tops.each do |top|
+        # print colors
+        puts
          if colors.include? getColor(top).downcase
           arr << top[:file_name]
          end
       end
     when "l2"
       @tops.each do |top|
-         if colors.include? getColor(top).downcase
+         if colors.include? getColor(top).downcase 
           arr << top[:file_name]
          end
       end
@@ -106,7 +142,8 @@ class JavaRunner
   end
 
   def getColor(clothes)
-    if clothes[:properties][:color_1].eql? "printed" ||
+    # puts clothes[:properties][:color_1]
+    if clothes[:properties][:color_1].downcase.eql? "printed" ||
       "check" || "gingham" || "striped" || "dots" || "light wash" ||
       "chambray" || "acid wash"
         return clothes[:properties][:color_2]
