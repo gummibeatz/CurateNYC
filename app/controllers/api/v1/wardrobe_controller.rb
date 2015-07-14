@@ -60,7 +60,7 @@ class Api::V1::WardrobeController < Api::ApiController
         base_clothing = Clothing.where(file_name: params[:base_clothing]).first
         javaRunner = JavaRunner.new(javaParams, base_clothing, wardrobe.wardrobe[:tops], 
           wardrobe.wardrobe[:bottoms], color_translator)
-        result = javaRunner.run
+        result = javaRunner.run.sort_by! {|k| k[:score]}.reverse!
         if result.eql? "NA"
           render :status=>200,
                  :json=>{:matches => "NA", :message => "NA"}
