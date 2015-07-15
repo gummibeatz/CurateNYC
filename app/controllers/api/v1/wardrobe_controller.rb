@@ -65,8 +65,7 @@ class Api::V1::WardrobeController < Api::ApiController
           render :status=>200,
                  :json=>{:matches => "NA", :message => "NA"}
         else
-        matches = {:matches => result.sort_by! {|k| k[:score]}.reverse!.uniq!,
-                    :message => "Success"}
+        matches = {:matches => result, :message => "Success"}
         
         render :status=>200,
                :json=>matches
