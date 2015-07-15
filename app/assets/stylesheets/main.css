@@ -67,7 +67,7 @@
 
 a {
   text-decoration: underline;
-  color: black;
+  color: #000000;
 }
 
 /*a:hover {
@@ -76,7 +76,7 @@ a {
 
 #thanks {
   font-family: Helvetica;
-  color: black;
+  color: #000000;
   width: 650px;
   margin: auto;
   padding-top: 10px;
@@ -96,7 +96,7 @@ a {
   white-space: nowrap;
   text-decoration: none;
   cursor: pointer;
-  /*background: #A9014B url(button_overlay.png) repeat-x scroll 0 0;*/
+  background: #A9014B url(button_overlay.png) repeat-x scroll 0 0;
   background-color: black;
   border-style: none;
   text-align: center;
