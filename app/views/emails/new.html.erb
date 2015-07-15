@@ -15,8 +15,7 @@
             <h1>curate</h1>
             <p>The future of men's fashion</p>
             <%= form_for(@email) do |f| %>
-              <%= f.text_field :email, :placeholder => "example@example.com", :size => "35"%>
-              <%=f.submit "Get Early Access"%>
+              <%= f.text_field :email, :placeholder => "Your.Email@email.com", :size => "35", :class => "textfield"%><%=f.submit "Get latest updates", :class => "submit"%>
             <%end%>
         </div>
       </div>
@@ -27,6 +26,7 @@
 
       <div class="col-md-8">
           <dl>
+        <dt>We have launched our Kickstarter! Help us meet our goal of $10k by August 15th. We have some awesome rewards that will make donating worth your while. Head over to our Kickstarter and check us out: <a href="https://www.kickstarter.com/projects/curate/1304299240?token=ff24a960">Curate's Kickstarter</a></dt>
         <dt>Who we are</dt>
         <dd>We are team of futurists who believe that dope style can be distilled and personally tailored through advanced analytics. We will make you reconsider the boundaries of men’s fashion.<br><br>
         Look, aren’t you fucking tired of being told what to wear by billboards featuring a Justin Bieber in some goddamned tighty-whites? Curate can help you wear what you want and look damn good doing it.</dd>
