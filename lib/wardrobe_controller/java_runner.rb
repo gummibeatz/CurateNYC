@@ -37,8 +37,7 @@ class JavaRunner
     if outfits.empty?
       return "NA"
     end
-    return outfits
-
+    return outfits.uniq!
 	end
 
 	private
