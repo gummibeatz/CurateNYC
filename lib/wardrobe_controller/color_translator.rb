@@ -11,6 +11,8 @@ class ColorTranslator
 	end
 
 	def specify(color)
+		colors = @color_translator[color]
+		puts "colors in colors translator = #{colors}"
 		return @color_translator[color]
 	end
 

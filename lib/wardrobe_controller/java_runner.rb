@@ -133,10 +133,12 @@ class JavaRunner
   end 
 
   def getClothesWithAttributes(colors,layer)
+    puts "*****in getclothes withattributes *****"
     arr = []
     case layer
     when "bottoms"
       @bottoms.each do |bottom|
+        puts "getcolor(bottom) = #{getColor(bottom).downcase}"
          if colors.include? getColor(bottom).downcase
           arr << bottom[:file_name]
          end
@@ -144,26 +146,27 @@ class JavaRunner
     when "l1"
       @tops.each do |top|
         # print colors
-        puts
+        puts "getcolor(top) = #{getColor(top).downcase}"
          if colors.include? getColor(top).downcase
           arr << top[:file_name]
          end
       end
     when "l2"
       @tops.each do |top|
+        puts "getcolor(top) = #{getColor(top).downcase}"
          if colors.include? getColor(top).downcase 
           arr << top[:file_name]
          end
       end
     end
+    puts "*** end getClothesWithAttributes ****"
     return arr
   end
 
   def getColor(clothes)
     # puts clothes[:properties][:color_1]
-    if clothes[:properties][:color_1].downcase.eql? "printed" ||
-      "check" || "gingham" || "striped" || "dots" || "light wash" ||
-      "chambray" || "acid wash"
+    not_colors =  ["printed", "check","gingham","striped","dots","light wash","chambray","acid wash"]
+    if not_colors.include? clothes[:properties][:color_1].downcase
         return clothes[:properties][:color_2]
     end
     return clothes[:properties][:color_1]
