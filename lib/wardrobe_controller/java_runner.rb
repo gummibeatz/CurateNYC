@@ -37,7 +37,7 @@ class JavaRunner
     if outfits.empty?
       return "NA"
     end
-    return outfits.uniq!
+    return outfits
 	end
 
 	private
@@ -53,12 +53,22 @@ class JavaRunner
 	 	colors = out.split(' ')[1..-1]
     matches = Hash.new
     matches[:score] = score
+    puts "matches[:score] = #{score}"
 	 	# Should be n nested loops, for n clothes 
     # exhaustive search
     # first loop through colors array
+
     bottom_colors = Array(@color_translator.specify(colors[0]))
     l1_colors = Array(@color_translator.specify(colors[1]))
+    # if l1_colors.size > 0
+    #   l1_colors.map! {|x| puts "l1_color is #{x}"}
+    # end
+    puts "l1_colors = #{l1_colors}"
     l2_colors = Array(@color_translator.specify(colors[2]))
+    # if l2_colors.size > 0
+    #   l2_colors.map! {|x| puts "l2_color is #{x}"}
+    # end
+    puts "l2_colors = #{l2_colors}"
     bottoms = getClothesWithAttributes(bottom_colors,"bottoms")
 	  l1s = getClothesWithAttributes(l1_colors,"l1")
     l2s = getClothesWithAttributes(l2_colors,"l2")
@@ -66,6 +76,9 @@ class JavaRunner
     print("bottoms are #{bottoms}\n")
     print("l1s are #{l1s}\n")
     print("l2s are #{l2s}\n")
+
+
+    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
     case orig_layer
     when "bottoms"
@@ -82,12 +95,14 @@ class JavaRunner
         end
       end
     when "l1"
+      puts "it's l1"
       category = @base_clothing[:properties]["main_category"].downcase
       for b in bottoms
         if l2s.count>0 and !category.eql? "light layer"
           for l2 in l2s
             outfit = [b,@base_file_name,l2]
             outfits << outfit
+            puts "inside l1 innerest loop \noutfit=#{outfit}"
           end
         else
           outfit = [b, @base_file_name, "NA"]
@@ -95,6 +110,7 @@ class JavaRunner
         end
       end
     when "l2"
+      puts "it's l2"
       for b in bottoms
         for l1 in l1s
           category = Clothing.where(file_name: l1).first[:properties]["main_category"].downcase
@@ -106,6 +122,9 @@ class JavaRunner
         end
       end
     end
+
+    puts"outfits = #{outfits}"
+    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``"
     if outfits.empty?
       return nil
     end
