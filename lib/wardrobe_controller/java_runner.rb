@@ -112,13 +112,18 @@ class JavaRunner
     when "l2"
       puts "it's l2"
       for b in bottoms
-        for l1 in l1s
-          category = Clothing.where(file_name: l1).first[:properties]["main_category"].downcase
-          # don't want light layer under anything
-          if !category.eql? "light layer"
-            outfit = [b,l1,@base_file_name]
-            outfits << outfit
+        if !l1.empty?
+          for l1 in l1s
+            category = Clothing.where(file_name: l1).first[:properties]["main_category"].downcase
+            # don't want light layer under anything
+            if !category.eql? "light layer"
+              outfit = [b,l1,@base_file_name]
+              outfits << outfit
+            end
           end
+        else
+          outfit = [b, "NA", @base_file_name]
+          outfits << outfit
         end
       end
     end
