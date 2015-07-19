@@ -61,9 +61,9 @@ class Api::V1::WardrobeController < Api::ApiController
         javaRunner = JavaRunner.new(javaParams, base_clothing, wardrobe.wardrobe[:tops], 
           wardrobe.wardrobe[:bottoms], color_translator)
         result = javaRunner.run
-        puts "result = #{result}"
+        # puts "result = #{result}"
         result.uniq!
-        puts "result.uniq! result = #{result}"
+        # puts "result.uniq! result = #{result}"
         result.sort_by! {|k| k[:score]}
         if result.eql? "NA"
           render :status=>200,
