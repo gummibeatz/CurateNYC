@@ -65,6 +65,7 @@ class Api::V1::WardrobeController < Api::ApiController
         result.uniq!
         # puts "result.uniq! result = #{result}"
         result.sort_by! {|k| k[:score]}
+        result.reverse!
         if result.eql? "NA"
           render :status=>200,
                  :json=>{:matches => "NA", :message => "NA"}
