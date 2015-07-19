@@ -34,6 +34,9 @@ class JavaRunner
       end
     end
 
+    puts "!!!!!! in java_runner.run !!!!"
+    puts "outfits = #{outfits} "
+
     if outfits.empty?
       return "NA"
     end
