@@ -112,7 +112,7 @@ class JavaRunner
     when "l2"
       puts "it's l2"
       for b in bottoms
-        if !l1.empty?
+        if l1 != nil
           for l1 in l1s
             category = Clothing.where(file_name: l1).first[:properties]["main_category"].downcase
             # don't want light layer under anything
