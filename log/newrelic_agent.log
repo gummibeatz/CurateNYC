@@ -6373,3 +6373,4 @@
 [07/20/15 21:13:35 -0400 linus-K55A (20287)] INFO : Doing deferred dependency-detection before Rack startup
 [07/20/15 21:13:47 -0400 linus-K55A (20287)] ERROR : Invalid license key, please contact support@newrelic.com
 [07/20/15 21:13:47 -0400 linus-K55A (20287)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[07/20/15 21:15:25 -0400 linus-K55A (20287)] INFO : Starting Agent shutdown

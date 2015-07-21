@@ -27,6 +27,7 @@ class ColorTranslator
 		@color_translator["charcoal"] = ["black"]
 		@color_translator["camo"] = ["brown"]
 		@color_translator["dark_blue"] = ["dark_blue","navy","indigo"]
+		@color_translator["dark_purple"] = ["dark_purple"]
 		@color_translator["dark_brown"] = ["dark_brown"]
 		@color_translator["dark_gray"] = ["dark_gray"]
 		@color_translator["dark_green"] = ["dark_green","olive"]
