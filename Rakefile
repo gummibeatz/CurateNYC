@@ -19,18 +19,27 @@ task :check_aws => :environment do
   addBatchAndURLInformation(true)
 end
 
+desc "Update with NewDB"
+task :update_aws => :environment do
+  Clothing.connection
+
+end
+
 
 def createClothesInSQLWithDatabase(dbArray) 
   dbArray.each do |main_category|
     main_category.each do |obj|
       clothing = JSON.parse(obj)
-      Clothing.create({
-        batch_information: [],
-        number: 0,
-        file_name: clothing["File_Name"],
-        url: "",
-        properties: formatHashKeys(clothing["Properties"])
-      })
+      # checks to see if clothing exists before adding
+      if !Clothing.exists?(:file_name => clothing["File_Name"])
+        Clothing.create({
+          batch_information: [],
+          number: 0,
+          file_name: clothing["File_Name"],
+          url: "",
+          properties: formatHashKeys(clothing["Properties"])
+        })
+      end
     end
   end
 end
@@ -49,11 +58,11 @@ def addBatchAndURLInformation(shouldTest = false)
       if (!Clothing.exists?(file_name: filename) && shouldTest == true)
         missingitems.add(filename)
       elsif Clothing.exists?(file_name: filename)
-        @top = Clothing.find_by file_name: filename
-        @top.url = url
-        @top.number = number
-        @top.batch_information << array
-        @top.save!
+        @piece = Clothing.find_by file_name: filename
+        @piece.url = url
+        @piece.number = number
+        @piece.batch_information << array
+        @piece.save!
       end
     end
   end
