@@ -11,10 +11,11 @@
 } 
 
 .jumbotron {
-  height: 660px;
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("CurateBackground.png");
+  background-color: black;
 }
 
 .jumbotron .container {
@@ -23,7 +24,7 @@
 }
 
 .jumbotron h1 {
-  color: #000000;
+  color: #FFFFFF;
   font-size: 48px;  
   font-family: 'Shift', Orator Std;
   /*font-weight: bold;*/
@@ -31,7 +32,7 @@
 
 .jumbotron p {
   font-size: 20px;
-  color: #000000;
+  color: #FFFFFF;
   font-family: 'Shift', Orator Std;
 }
 
@@ -67,7 +68,7 @@
 
 a {
   text-decoration: underline;
-  color: #000000;
+  color: white;
 }
 
 /*a:hover {

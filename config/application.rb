@@ -6,7 +6,6 @@ Bundler.require(*Rails.groups)
 module CurateRails
   class Application < Rails::Application
     config.assets.initialize_on_precompile = true
-    
     config.autoload_paths += %W(#{config.root}/lib/wardrobe_controller)
     # loads all subdirectories in /lib
     # config.autoload_paths += Dir["#{config.root}/lib/**/"]

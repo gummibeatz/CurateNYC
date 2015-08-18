@@ -5,45 +5,26 @@
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
     <%= stylesheet_link_tag 'application.css' %>
-
+    <%= csrf_meta_tag %>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag "splashAnimation" %>
   </head>
 
   <body>
-    <div class="jumbotron">
-      <div class="container">
-        <div class = "text-center">
-            <h1>curate</h1>
-            <p>The future of men's fashion</p>
-            <%= form_for(@email) do |f| %>
-              <%= f.text_field :email, :placeholder => "Your.Email@email.com", :size => "35", :class => "textfield"%><%=f.submit "Get the latest updates", :class => "submit"%>
-            <%end%>
-        </div>
-      </div>
-    </div> 
 
-    <div class="learn-more">
-    <div class="container">
+  <div id="splash-container"> 
+    <div id="text1" class="splash-text">Hey guys, tired of looking like shit?</div>
+    <div id="text2" class="splash-text">Don't worry. We got you.</div>
+    <div id="text3" class="splash-text">Here at Curate, we'll put together dope outfits based on your pre-existing wardrobe. The best part? You don't have to take a single fucking picture.</div>
 
-      <div class="col-md-8">
-          <dl>
-        <dt>We have launched our Kickstarter! Help us meet our goal of $10k by August 15th. We have some awesome rewards that will make donating worth your while. Head over to our Kickstarter and check us out: <a href="https://www.kickstarter.com/projects/curate/1304299240?token=ff24a960">Curate's Kickstarter</a></dt>
-        <dt>Who we are</dt>
-        <dd>We are team of futurists who believe that dope style can be distilled and personally tailored through advanced analytics. We will make you reconsider the boundaries of men’s fashion.<br><br>
-        Look, aren’t you fucking tired of being told what to wear by billboards featuring a Justin Bieber in some goddamned tighty-whites? Curate can help you wear what you want and look damn good doing it.</dd>
-          
-        
-        <dt>How we do what we do</dt>
-        <dd>Using our proprietary algorithmic process, we can digitize 80% of your wearable wardrobe in under 5 minutes. You don’t have to take a single picture.<br><br>
-        Once your wardrobe is digitized, you’re ready to Curate. Merely select the piece of clothing you want to be the base of your outfit. Our algorithms will do the rest.<br><br>
-        Don’t believe us? Try it for yourself.</dd>
-        </dl>
-      </div>
-
-      <div class="col-md-4">
-          <%= image_tag "iPhone.png", alt:"curateiphone.png", width: "300", height: "580"%>
-      </div>
-
+    <div id="email-box" class="splash-text">
+      <%= form_for(@email) do |f| %>
+        <%= f.text_field :email, :placeholder => "Your.Email@email.com", :size => "35", :class => "textfield"%><%=f.submit "Get the latest updates", :class => "submit"%>
+      <%end%>
     </div>
+
+    <div id ="timer">10</div>
+
+    <div class="arrow bounce"></div>
   </div>
-  </body>
-</html>
