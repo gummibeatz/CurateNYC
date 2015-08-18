@@ -44,6 +44,7 @@
 
 #email-box {
   top: 120%;
+  height: 50px;
 }
 
 #email-box .submit {
@@ -55,7 +56,8 @@
   border: 2px solid white;
   border-left-style: solid;
   border-left-width: 1px;
-  height: 50px;
+  height: 100%;
+  width: 40%;
 }
 
 #email-box .textfield {
@@ -65,9 +67,10 @@
   background-color: black;
   border: 2px solid white;
   border-right-style: none;
-  height: 50px;
+  height: 100%;
   padding-left: 10px;
   color:white;
+  width: 40%;
 }
 
 
