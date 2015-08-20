@@ -46,6 +46,8 @@
   position: absolute;
   top: 120%;
   height: 500px;
+  left: 0;
+  width: 100%;
 }
 
 #email-box .submit {
@@ -57,9 +59,11 @@
   border: 2px solid white;
   border-left-style: solid;
   border-left-width: 1px;
-  height: 100%;
-  width: 50%;
+  height: 2em;
+  width: 35%;
   box-sizing: border-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
 }
 
 #email-box .textfield {
@@ -71,9 +75,11 @@
   border-right-style: none;
   padding-left: 10px;
   color:white;
-  height: 100%;
-  width: 50%;
-  box-sizing: border-box; 
+  height: 2em;
+  width: 35%;
+  box-sizing: border-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
 }
 
 
