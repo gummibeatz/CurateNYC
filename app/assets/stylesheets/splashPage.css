@@ -59,6 +59,7 @@
   border-left-width: 1px;
   height: 100%;
   width: 50%;
+  box-sizing: border-box;
 }
 
 #email-box .textfield {
@@ -72,6 +73,7 @@
   color:white;
   height: 100%;
   width: 50%;
+  box-sizing: border-box; 
 }
 
 
