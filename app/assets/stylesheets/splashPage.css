@@ -43,8 +43,9 @@
 }
 
 #email-box {
+  position: absolute;
   top: 120%;
-  height: 50px;
+  height: 500px;
 }
 
 #email-box .submit {
@@ -67,9 +68,9 @@
   background-color: black;
   border: 2px solid white;
   border-right-style: none;
-  height: 100%;
   padding-left: 10px;
   color:white;
+  height: 100%;
   width: 50%;
 }
 
