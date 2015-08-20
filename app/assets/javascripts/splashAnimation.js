@@ -7,7 +7,7 @@ $(document).ready(function(){
             bottom: "+=9"
         }, 500, function() {
             $arrow.animate({
-                bottom: "-=9"
+               bottom: "-=9"
             }, 700, function() {
                 bounce();
             })
