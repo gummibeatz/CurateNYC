@@ -51,6 +51,9 @@
 }
 
 #email-box .submit {
+  box-sizing: border-box;      
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   border-top-style: solid;
   border-right-style: solid;
   border-bottom-style: solid;
@@ -61,12 +64,13 @@
   border-left-width: 1px;
   height: 2em;
   width: 35%;
-  box-sizing: border-box;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
+  padding: 0;
 }
 
 #email-box .textfield {
+  box-sizing: border-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;      
   border-top-style: solid;
   border-bottom-style: solid;
   border-left-style: solid;
@@ -77,10 +81,7 @@
   color:white;
   height: 2em;
   width: 35%;
-  box-sizing: border-box;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-
+  padding: 0;
 }
 
 

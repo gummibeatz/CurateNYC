@@ -11,14 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417184449) do
+ActiveRecord::Schema.define(version: 20150830142329) do
 
-  create_table "clothings", force: true do |t|
-    t.text    "batch_information", default: "--- {}\n"
-    t.integer "number"
-    t.string  "file_name"
-    t.string  "url"
-    t.text    "properties"
+  create_table "bottoms", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "emails", force: true do |t|
@@ -41,6 +38,11 @@ ActiveRecord::Schema.define(version: 20150417184449) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "outfits"
+  end
+
+  create_table "tops", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
