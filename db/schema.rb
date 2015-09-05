@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20150905122406) do
 
   create_table "bottoms", force: true do |t|
+    t.integer  "outfit_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
