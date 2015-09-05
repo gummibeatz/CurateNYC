@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   has_many :tops, :through => users_tops
   has_many :bottoms, :through => users_bottoms
-  has_many :outfits, :through => users_outfits
+  has_many :outfits
   
   serialize :preferences
   before_save :ensure_authentication_token

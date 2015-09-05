@@ -9,6 +9,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'rails-api' , require: 'rails-api/action_controller/api'
 gem 'sdoc', require: false, group: :doc
 gem "pry"
+gem "awesome_print"
 
 #Omniauth
 gem 'omniauth'
@@ -36,6 +37,8 @@ group :test, :development do
   # gem "simplecov"
   gem "database_cleaner"
   gem "sqlite3"
+  gem "annotate"
+  gem "shoulda-matchers"
   # gem "guard-rspec", require: false
   gem "thin"
 end
