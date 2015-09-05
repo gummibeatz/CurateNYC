@@ -6,8 +6,8 @@ Rails.application.load_tasks
 
 dbArray = JSON.parse(File.read(File.join(Rails.root, 'public', 'DatabaseArray.json'))) 
 
-desc "Read AWS" 
-task :read_aws => :environment do
+desc "Adds Tops and Bottoms to their respective tables based on dbArray file" 
+task :add_clothing => :environment do
   Clothing.connection
   createClothesInSQLWithDatabase(dbArray)
   addBatchAndURLInformation()
@@ -17,12 +17,6 @@ desc "Check AWS"
 task :check_aws => :environment do
   Clothing.connection
   addBatchAndURLInformation(true)
-end
-
-desc "Update with NewDB"
-task :update_aws => :environment do
-  Clothing.connection
-
 end
 
 

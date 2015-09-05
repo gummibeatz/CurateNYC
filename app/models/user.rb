@@ -5,13 +5,16 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessible :email, :password, :remember_me, :encrypted_password, :preferences
-  has_one :like
-  has_one :outfit
-  has_one :wardrobe
+  
+  has_many :user_tops
+  has_many :tops, :through => :user_tops
+  has_many :user_bottoms
+  has_many :bottoms, :through => :user_bottoms
+  has_many :outfits
+  
   serialize :preferences
   before_save :ensure_authentication_token
-  after_save  :create_outfit, :create_like
-  after_create :create_wardrobe
+  #after_save  :create_outfit, :create_like
  
   def ensure_authentication_token
     if authentication_token.blank?
