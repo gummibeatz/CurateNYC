@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessible :email, :password, :remember_me, :encrypted_password, :preferences
 
-  has_and_belongs_to_many :top
-  has_and_belongs_to_many :bottom
-  has_many :outfit
+  has_many :tops, :through => users_tops
+  has_many :bottoms, :through => users_bottoms
+  has_many :outfits, :through => users_outfits
   
   serialize :preferences
   before_save :ensure_authentication_token

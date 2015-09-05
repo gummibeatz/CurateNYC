@@ -1,6 +1,6 @@
 class Outfit < ActiveRecord::Base
   belongs_to :user, :dependent => :destroy
-  has_and_belongs_to_many :top
+  has_many :tops
   has_one :bottom
 
   serialize :outfits
