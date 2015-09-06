@@ -30,7 +30,7 @@ def createClothesInSQLWithDatabase(dbArray)
       case index
       when 0
         if !Top.exists?(:file_name => clothing["File_Name"])
-          Top.create({
+          Top.create!({
               batch_information: [],
             number: 0,
             file_name: clothing["File_Name"],

@@ -11,7 +11,6 @@ class Outfit < ActiveRecord::Base
   def serialize_outfits
     self.user_id = user.id
     self.authentication_token = user.authentication_token
-    self.outfits = [{:title => "outfit_0 title", :tag => ["tag_0", "tag_1", "tag_2"],:items => {:top => "url", :bottoms => "url"}}]
     self.save!
   end
 end
