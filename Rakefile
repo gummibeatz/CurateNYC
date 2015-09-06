@@ -7,32 +7,47 @@ Rails.application.load_tasks
 dbArray = JSON.parse(File.read(File.join(Rails.root, 'public', 'DatabaseArray.json'))) 
 
 desc "Adds Tops and Bottoms to their respective tables based on dbArray file" 
-task :add_clothing => :environment do
-  Clothing.connection
+task :update_tops_and_bottoms => :environment do
+  Top.connection
+  Bottom.connection 
   createClothesInSQLWithDatabase(dbArray)
   addBatchAndURLInformation()
 end
 
 desc "Check AWS"
 task :check_aws => :environment do
-  Clothing.connection
+  Top.connection
+  Bottom.connection 
   addBatchAndURLInformation(true)
 end
 
 
 def createClothesInSQLWithDatabase(dbArray) 
-  dbArray.each do |main_category|
+  dbArray.each_with_index do |main_category, index|
     main_category.each do |obj|
       clothing = JSON.parse(obj)
       # checks to see if clothing exists before adding
-      if !Clothing.exists?(:file_name => clothing["File_Name"])
-        Clothing.create({
-          batch_information: [],
-          number: 0,
-          file_name: clothing["File_Name"],
-          url: "",
-          properties: formatHashKeys(clothing["Properties"])
-        })
+      case index
+      when 0
+        if !Top.exists?(:file_name => clothing["File_Name"])
+          Top.create({
+              batch_information: [],
+            number: 0,
+            file_name: clothing["File_Name"],
+            url: "",
+            properties: formatHashKeys(clothing["Properties"])
+          })
+        end
+      when 1
+        if !Bottom.exists?(:file_name => clothing["File_Name"])
+          Bottoms.create({
+              batch_information: [],
+            number: 0,
+            file_name: clothing["File_Name"],
+            url: "",
+            properties: formatHashKeys(clothing["Properties"])
+          })           
+        end
       end
     end
   end
