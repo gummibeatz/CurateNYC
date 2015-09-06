@@ -5,5 +5,6 @@ class CreateUserTops < ActiveRecord::Migration
       t.integer :top_id
       t.timestamps
     end
+    add_index :user_tops, [:user_id, :top_idp]
   end
 end

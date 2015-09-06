@@ -5,5 +5,6 @@ class CreateOutfitTops < ActiveRecord::Migration
       t.integer :top_id
       t.timestamps
     end
+    add_index :outfit_tops, [:outfit_id, :top_id]
   end
 end

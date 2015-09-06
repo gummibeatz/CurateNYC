@@ -5,5 +5,6 @@ class CreateUserBottoms < ActiveRecord::Migration
       t.integer :bottom_id
       t.timestamps
     end
+    add_index :user_bottoms, [:user_id, :bottom_id]
   end
 end
