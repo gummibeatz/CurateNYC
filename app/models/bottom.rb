@@ -9,5 +9,12 @@ class Bottom < ActiveRecord::Base
   
   belongs_to :outfit
   
-  attr_accessible :batch_information, :number, :file_name, :url, :properties
+  attr_accessible :file_name, :url
+
+  def self.create_with_data(data)
+    bottom = Bottom.new
+    bottom.file_name = data["File_Name"]
+    bottom.save!
+  end
+
 end

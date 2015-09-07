@@ -1,6 +1,7 @@
 class CreateTops < ActiveRecord::Migration
   def change
     create_table :tops do |t|
+      t.string :url
       t.string :file_name
       t.integer :main_category, default: 0
       t.string :clothing_type

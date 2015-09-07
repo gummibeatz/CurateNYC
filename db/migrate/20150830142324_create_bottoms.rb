@@ -3,6 +3,7 @@ class CreateBottoms < ActiveRecord::Migration
     create_table :bottoms do |t|
       t.integer :outfit_id
       
+      t.string :url
       t.string :file_name
       t.integer :main_category, default: 0
       t.string :clothing_type

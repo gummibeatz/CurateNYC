@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20150905122406) do
 
   create_table "bottoms", force: true do |t|
     t.integer  "outfit_id"
+    t.string   "url"
     t.string   "file_name"
     t.integer  "main_category",   default: 0
     t.string   "clothing_type"
@@ -66,6 +67,7 @@ ActiveRecord::Schema.define(version: 20150905122406) do
   end
 
   create_table "tops", force: true do |t|
+    t.string   "url"
     t.string   "file_name"
     t.integer  "main_category", default: 0
     t.string   "clothing_type"

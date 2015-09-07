@@ -10,5 +10,12 @@ class Top < ActiveRecord::Base
   has_many :outfit_tops
   has_many :outfits, :through => :outfit_tops
   
-  attr_accessible :batch_information, :number, :file_name, :url, :properties
+  attr_accessible  :file_name, :url
+
+  def self.create_with_data(data)
+    top = Top.new
+    top.file_name = data["File_Name"]
+    top.save!
+  end
+
 end
