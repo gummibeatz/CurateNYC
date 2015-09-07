@@ -29,11 +29,11 @@ def update_db_with_data(dbArray)
       # checks to see if clothing exists before adding
       case index
       when 0
-        if !Top.exists?(:file_name => clothing["File_Name"])
+        if !Top.exists?(:file_name => clothing["file_name"])
           Top.create_with_data(clothing)
         end
       when 1
-        if !Bottom.exists?(:file_name => clothing["File_Name"])
+        if !Bottom.exists?(:file_name => clothing["file_name"])
           Bottom.create_with_data(clothing)      
         end
       end

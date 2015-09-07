@@ -32,6 +32,6 @@ class CreateTops < ActiveRecord::Migration
       t.boolean :batch_number
       t.timestamps
     end
-    add_index :tops, :file_name
+    add_index :tops, [:file_name, :color_1]
   end
 end

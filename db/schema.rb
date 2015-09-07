@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 20150905122406) do
     t.datetime "updated_at"
   end
 
-  add_index "tops", ["file_name"], name: "index_tops_on_file_name"
+  add_index "tops", ["file_name", "color_1"], name: "index_tops_on_file_name_and_color_1"
 
   create_table "user_bottoms", force: true do |t|
     t.integer  "user_id"
