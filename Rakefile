@@ -74,6 +74,10 @@ def update_urls(shouldTest = false)
   end
 end
 
+def update_new_batch
+  
+end
+
 # makes hash keys lowercase
 def formatHashKeys(hash)
   new_hash = {}
