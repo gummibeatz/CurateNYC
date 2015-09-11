@@ -28,7 +28,7 @@ class CreateBottoms < ActiveRecord::Migration
       t.boolean :dressy
       t.boolean :formal
       t.boolean :priority
-      t.boolean :batch_number
+      t.integer :row_number
       t.timestamps
     end
   end

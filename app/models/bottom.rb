@@ -36,7 +36,7 @@ class Bottom < ActiveRecord::Base
     bottom.dressy = data["dress"] == "y"
     bottom.formal = data["formal"] == "y"
     bottom.priority = data["priority"] == "y"
-    bottom.batch_number = data["batch_number"] == "y"
+    bottom.row_number = data["row_number"]
     bottom.save!
   end
 

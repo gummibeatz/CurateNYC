@@ -41,7 +41,7 @@ class Top < ActiveRecord::Base
     top.third_layer = data["third_layer"] == "y"
     top.fourth_layer = data["fourth_layer"] == "y"
     top.priority = data["priority"] == "y"
-    top.batch_number = data["batch_number"] == "y" 
+    top.row_number = data["row_number"] 
     top.save!
   end
 

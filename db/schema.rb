@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20150905122406) do
     t.boolean  "dressy"
     t.boolean  "formal"
     t.boolean  "priority"
-    t.boolean  "batch_number"
+    t.integer  "row_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 20150905122406) do
     t.boolean  "third_layer"
     t.boolean  "fourth_layer"
     t.boolean  "priority"
-    t.boolean  "batch_number"
+    t.integer  "row_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

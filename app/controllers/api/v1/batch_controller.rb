@@ -2,6 +2,8 @@ class Api::V1::BatchController < Api::ApiController
   include ActionController::MimeResponds
   respond_to :json
 
+    @batch_order = File.read(File.join(Rails.root, 'public', 'batch_order.txt'))
+
   def index
     seed = Random.new(1)
     clothing_count = Top.count + Bottom.count
@@ -17,6 +19,8 @@ class Api::V1::BatchController < Api::ApiController
         all_priority_clothing = Top.priorities + Bottom.priorities
         all_not_priority_clothing = Top.where(priority: false) + Bottom.where(priority: false)
         
+        puts @batch_order
+
         all_priority_clothing.shuffle!(random: seed)
         all_not_priority_clothing.shuffle!(random: seed)
         

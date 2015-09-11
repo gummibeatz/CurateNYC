@@ -29,7 +29,7 @@ class CreateTops < ActiveRecord::Migration
       t.boolean :third_layer
       t.boolean :fourth_layer
       t.boolean :priority
-      t.boolean :batch_number
+      t.integer :row_number
       t.timestamps
     end
     add_index :tops, [:file_name, :color_1]

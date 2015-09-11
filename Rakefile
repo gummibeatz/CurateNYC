@@ -4,13 +4,13 @@ require 'set'
 require File.expand_path('../config/application', __FILE__)
 Rails.application.load_tasks
 
-dbArray = JSON.parse(File.read(File.join(Rails.root, 'public', 'DatabaseArray.json'))) 
+dbArray = JSON.parse(File.read(File.join(Rails.root, 'public', 'DatabaseArray.json')))
 
 #really only need this one
 desc "Adds Tops and Bottoms to their respective tables based on dbArray file" 
 task :update_tops_and_bottoms => :environment do
   Top.connection
-  Bottom.connection 
+  Bottom.connection
   update_db_with_data(dbArray)
 end
 
