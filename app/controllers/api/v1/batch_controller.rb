@@ -2,13 +2,10 @@ class Api::V1::BatchController < Api::ApiController
   include ActionController::MimeResponds
   respond_to :json
 
-    @batch_order = File.read(File.join(Rails.root, 'public', 'batch_order.txt'))
-
+  
   def index
-    seed = Random.new(1)
-    clothing_count = Top.count + Bottom.count
     @array = []
-    if clothing_count > 0
+    if Top.count + Bottom.count > 0
       if params[:batch_folder] != nil
         for i in (1..18)
           # check to see if it's of the correct batch folder
@@ -16,17 +13,11 @@ class Api::V1::BatchController < Api::ApiController
         end
         render json: @array
       else
-        all_priority_clothing = Top.priorities + Bottom.priorities
-        all_not_priority_clothing = Top.where(priority: false) + Bottom.where(priority: false)
+        tops = Top.order(:row_number)
+        bottoms = Bottom.order(:row_number)
         
-        puts @batch_order
+        render json: merge_clothing(tops, bottoms).each_slice(20).to_a
 
-        all_priority_clothing.shuffle!(random: seed)
-        all_not_priority_clothing.shuffle!(random: seed)
-        
-        all_clothing = all_priority_clothing + all_not_priority_clothing
-        
-        render json: all_clothing.each_slice(20).to_a #splits it up into batches  
       end
     else
       logger.info("Oh damn the batches aren't here! Call Christina!")
@@ -48,6 +39,30 @@ class Api::V1::BatchController < Api::ApiController
       end
     end
     return clothes
+  end
+
+  private
+
+  def merge_clothing(tops, bottoms)
+    count = 0
+    total_count = tops.count + bottoms.count
+    clothes = []
+    top_ct = 0
+    bottom_ct = 0
+
+    while count < total_count
+      if top_ct == tops.count then return clothes.concat(bottoms[bottom_ct, bottoms.count - 1])
+      elsif bottom_ct == bottoms.count then return clothes.concat(tops[top_ct, tops.count - 1])
+      else
+        if tops[top_ct].row_number < bottoms[bottom_ct].row_number
+          clothes.push tops[top_ct]
+          top_ct+=1
+        else
+          clothes.push bottoms[bottom_ct]
+          bottom_ct+=1
+        end
+      end
+    end
   end
 
 end
