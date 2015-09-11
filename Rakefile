@@ -6,12 +6,12 @@ Rails.application.load_tasks
 
 dbArray = JSON.parse(File.read(File.join(Rails.root, 'public', 'DatabaseArray.json'))) 
 
+#really only need this one
 desc "Adds Tops and Bottoms to their respective tables based on dbArray file" 
 task :update_tops_and_bottoms => :environment do
   Top.connection
   Bottom.connection 
   update_db_with_data(dbArray)
-  update_urls()
 end
 
 desc "Check AWS"
@@ -19,6 +19,13 @@ task :check_aws => :environment do
   Top.connection
   Bottom.connection 
   update_urls(true)
+end
+
+desc "Task tester"
+task :task_test => :environment do
+  Top.connection
+  Bottom.connection
+  update_new_urls
 end
 
 
@@ -45,7 +52,7 @@ end
 def update_urls(shouldTest = false)
   missingitems = Set.new
   AWS::S3.new.buckets['curateanalytics'].objects.each do |obj|
-    if(obj.key =~ /swipe batches/) && (obj.key =~ /jpg/)
+    if(obj.key =~ /swipe_batches/) && (obj.key =~ /jpg/)
       folder = obj.key.split("/")[1]
       batch = obj.key.split("/")[obj.key.split("/").length-2]
       url = "https://s3.amazonaws.com/curateanalytics/" + obj.key.gsub('&', '%26').gsub('swipe ', 'swipe+')
@@ -72,10 +79,6 @@ def update_urls(shouldTest = false)
       end
     end
   end
-end
-
-def update_new_batch
-  
 end
 
 # makes hash keys lowercase

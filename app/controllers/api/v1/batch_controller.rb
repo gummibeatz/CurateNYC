@@ -3,17 +3,26 @@ class Api::V1::BatchController < Api::ApiController
   respond_to :json
 
   def index
+    seed = Random.new(1)
+    clothing_count = Top.count + Bottom.count
     @array = []
-    if Clothing.count > 1
+    if clothing_count > 0
       if params[:batch_folder] != nil
         for i in (1..18)
           # check to see if it's of the correct batch folder
           @array.push(findClothesWithBatchFolder(i,params[:batch_folder]))
-          # break
         end
         render json: @array
       else
-        render json: Clothing.all
+        all_priority_clothing = Top.priorities + Bottom.priorities
+        all_not_priority_clothing = Top.where(priority: false) + Bottom.where(priority: false)
+        
+        all_priority_clothing.shuffle!(random: seed)
+        all_not_priority_clothing.shuffle!(random: seed)
+        
+        all_clothing = all_priority_clothing + all_not_priority_clothing
+        
+        render json: all_clothing.each_slice(20).to_a #splits it up into batches  
       end
     else
       logger.info("Oh damn the batches aren't here! Call Christina!")

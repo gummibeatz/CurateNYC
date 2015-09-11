@@ -1,6 +1,7 @@
 class Bottom < ActiveRecord::Base
-  serialize :properties
-  serialize :batch_information
+
+  scope :priorities, -> { where(priority: true) }
+  scope :in_batch_number, ->(number) { where(batch_number: number) }
 
   enum main_category: [:pants, :shorts]
   
@@ -9,11 +10,11 @@ class Bottom < ActiveRecord::Base
   
   belongs_to :outfit
   
-  attr_accessible :file_name, :url
-
   def self.create_with_data(data)
     bottom = Bottom.new
     bottom.file_name = data["file_name"]
+    base_url = "https://s3.amazonaws.com/curateanalytics/swipe_batches/main/" 
+    bottom.url = base_url + data["file_name"]
     bottom.main_category = data["main_category"]
     bottom.clothing_type = data["clothing_type"]
     bottom.clothing_type_2 = data["clothing_type_2"]
@@ -23,19 +24,19 @@ class Bottom < ActiveRecord::Base
     bottom.pattern = data["pattern"]
     bottom.color_1 = data["color_1"]
     bottom.color_2 = data["color_2"]
-    bottom.spring = data["spring"]
-    bottom.fall = data["summer"]
-    bottom.winter = data["winter"]
-    bottom.warm = data["warm"]
-    bottom.hot = data["hot"]
-    bottom.brisk = data["brisk"]
-    bottom.cold = data["cold"]
-    bottom.casual = data["casual"]
-    bottom.going_out = data["going_out"]
-    bottom.dressy = data["dress"]
-    bottom.formal = data["formal"]
-    bottom.priority = data["priority"]
-    bottom.batch_number = data["batch_number"]
+    bottom.spring = data["spring"] == "y"
+    bottom.fall = data["summer"] == "y"
+    bottom.winter = data["winter"] == "y"
+    bottom.warm = data["warm"] == "y"
+    bottom.hot = data["hot"] == "y"
+    bottom.brisk = data["brisk"] == "y"
+    bottom.cold = data["cold"] == "y"
+    bottom.casual = data["casual"] == "y"
+    bottom.going_out = data["going_out"] == "y"
+    bottom.dressy = data["dress"] == "y"
+    bottom.formal = data["formal"] == "y"
+    bottom.priority = data["priority"] == "y"
+    bottom.batch_number = data["batch_number"] == "y"
     bottom.save!
   end
 
