@@ -1,6 +1,7 @@
 class Api::V1::WardrobeController < Api::ApiController
   include ActionController::MimeResponds
   respond_to :json
+
   def index
     if params[:authentication_token] != nil
       if User.find_by_authentication_token(authentication_token = params[:authentication_token])
@@ -55,31 +56,31 @@ class Api::V1::WardrobeController < Api::ApiController
             :json=>{:message=>"Did you forget the authentication_token,temperature,\
               base_clothing"}
     else
-      if Wardrobe.find_by_authentication_token(authentication_token = params[:authentication_token])
-        wardrobe = Wardrobe.find_by_authentication_token(authentication_token = params[:authentication_token])
-       
-        color_translator = ColorTranslator.new()
-       formatter = PreJavaFormatter.new(params[:temperature],params[:base_clothing],
-          wardrobe.wardrobe[:tops], wardrobe.wardrobe[:bottoms], color_translator)
-        javaParams = formatter.formatJavaParams
-        base_clothing = Clothing.where(file_name: params[:base_clothing]).first
-        javaRunner = JavaRunner.new(javaParams, base_clothing, wardrobe.wardrobe[:tops], 
-          wardrobe.wardrobe[:bottoms], color_translator)
-        result = javaRunner.run
-        # puts "result = #{result}"
-        result.uniq!
-        # puts "result.uniq! result = #{result}"
-        result.sort_by! {|k| k[:score]}
-        result.reverse!
-        if result.eql? "NA"
-          render :status=>200,
-                 :json=>{:matches => "NA", :message => "NA"}
-        else
-        matches = {:matches => result, :message => "Success"}
-        
+      if @user = User.find_by_authentication_token(authentication_token = params[:authentication_token])
+        #color_translator = ColorTranslator.new()
+        #formatter = PreJavaFormatter.new(params[:temperature],params[:base_clothing],
+        #  wardrobe.wardrobe[:tops], wardrobe.wardrobe[:bottoms], color_translator)
+        #javaParams = formatter.formatJavaParams
+        #base_clothing = Clothing.where(file_name: params[:base_clothing]).first
+        #javaRunner = JavaRunner.new(javaParams, base_clothing, wardrobe.wardrobe[:tops], 
+        #  wardrobe.wardrobe[:bottoms], color_translator)
+        #result = javaRunner.run
+        ## puts "result = #{result}"
+        #result.uniq!
+        ## puts "result.uniq! result = #{result}"
+        #result.sort_by! {|k| k[:score]}
+        #result.reverse!
+        #if result.eql? "NA"
+        #  render :status=>200,
+        #         :json=>{:matches => "NA", :message => "NA"}
+        #else
+        #matches = {:matches => result, :message => "Success"}
+        #
+        #render :status=>200,
+        #       :json=>matches
+        #end
         render :status=>200,
-               :json=>matches
-        end
+                :json => {:matches => nil, :message => "Success"}
       else
         logger.info("Failed connection to wardrobe/matches json, a wardrobe cannot be found by that authentication_token.")
         render :status=>400,
