@@ -5,10 +5,13 @@ class Api::V1::WardrobeController < Api::ApiController
     if params[:authentication_token] != nil
       if User.find_by_authentication_token(authentication_token = params[:authentication_token])
         @user = User.find_by_authentication_token(authentication_token = params[:authentication_token])
-        @wardrobe = Wardrobe.find_by_user_id(user_id = @user.id)
+        tops = @user.tops
+        bottoms = @user.bottoms
+        wardrobe = []
+        wardrobe.push(tops).push(bottoms)
         logger.info("Successful #{@user.name} connection to wardrobe json.")
         render :status =>200,
-               :json=>@wardrobe
+               :json=>wardrobe
       else
         logger.info("Failed connection to wardrobe json, a user cannot be found by that authentication_token.")
         render :status =>400,
@@ -24,10 +27,12 @@ class Api::V1::WardrobeController < Api::ApiController
 
   def update
     if params[:authentication_token] != nil
-      if Wardrobe.find_by_authentication_token(authentication_token = params[:authentication_token])
-        @wardrobe = Wardrobe.find_by_authentication_token(authentication_token = params[:authentication_token])
-        @wardrobe.wardrobe = params[:wardrobe]
-        @wardrobe.save!
+      @user = User.find_by_authentication_token(authentication_token = params[:authentication_token])
+      if @user
+        @wardrobe = params[:wardrobe]
+        puts file_name = @wardrobe["clothing"]["file_name"]
+        @user.tops.append(Top.where(file_name: file_name))
+        @user.bottoms.append(Bottom.where(file_name: file_name))
       else
         logger.info("Failed connection to wardrobe/edit json, a wardrobe cannot be found by that authentication_token.")
         render :status =>400,

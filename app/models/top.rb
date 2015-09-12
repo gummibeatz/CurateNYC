@@ -10,6 +10,8 @@ class Top < ActiveRecord::Base
   
   has_many :outfit_tops
   has_many :outfits, :through => :outfit_tops
+
+  validates :file_name, uniqueness: true
   
   def self.create_with_data(data)
     top = Top.new

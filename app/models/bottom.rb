@@ -7,7 +7,9 @@ class Bottom < ActiveRecord::Base
   
   has_many :user_bottoms
   has_many :users, :through => :user_bottoms
-  
+ 
+  validates :file_name, uniqueness: true
+
   belongs_to :outfit
   
   def self.create_with_data(data)
