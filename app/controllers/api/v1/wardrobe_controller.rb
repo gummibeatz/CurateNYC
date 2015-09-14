@@ -57,10 +57,14 @@ class Api::V1::WardrobeController < Api::ApiController
               base_clothing"}
     else
       if @user = User.find_by_authentication_token(authentication_token = params[:authentication_token])
-        #color_translator = ColorTranslator.new()
-        #formatter = PreJavaFormatter.new(params[:temperature],params[:base_clothing],
-        #  wardrobe.wardrobe[:tops], wardrobe.wardrobe[:bottoms], color_translator)
-        #javaParams = formatter.formatJavaParams
+        temp = params[:temperature]
+        base_clothing = params[:base_clothing]
+        color_translator = ColorTranslator.new()
+        
+        formatter = PreJavaFormatter.new(params[:temperature],params[:base_clothing],
+          @user.tops, @user.bottoms, color_translator)
+        javaParams = formatter.formatJavaParams
+        puts javaParams
         #base_clothing = Clothing.where(file_name: params[:base_clothing]).first
         #javaRunner = JavaRunner.new(javaParams, base_clothing, wardrobe.wardrobe[:tops], 
         #  wardrobe.wardrobe[:bottoms], color_translator)

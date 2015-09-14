@@ -1,13 +1,12 @@
 class PreJavaFormatter
 
 	# takes in the Temperature in Farenheith
-	# and tops and bottoms array of the Wardrobe model
+	# and tops and bottoms of the user
 	def initialize(temp,base_clothing,tops, bottoms, color_translator)
 		@temp = temp
 		@tops = tops
 		@bottoms = bottoms
 		@base_clothing = base_clothing
-		@base_category = Clothing.where(file_name: @base_clothing).first[:properties]["main_category"]
 		@color_translator = color_translator
 		@bad_colors = ["printed","check","gingham","striped","dots","light wash", "chambray", "acid wash"]
 	end
@@ -66,11 +65,11 @@ class PreJavaFormatter
 			for top in @tops
 				# will only add if it has the layer property
 				# and it is not the same main category as the base clothing
-				if top[:properties][:first_layer].eql? "x" and
-					(!top[:properties][:main_category].eql? @base_category)
+				if top.first_layer.eql? "y" and
+					(!top.main_category.eql? @base_category)
 					colors << generalizeColors(top,true)
 					colors << " "
-					layer1_cat = top[:properties][:main_category]
+					layer1_cat = top.main_category
 					ct += 1
 				end
 			end
@@ -88,9 +87,9 @@ class PreJavaFormatter
 			for top in @tops
 				# will only add if it has the layer property
 				# and it is not the same main category as the base clothing
-				if top[:properties][:first_layer].eql? "x" and
-					(!top[:properties][:main_category].eql? @base_category) and
-					(!top[:properties][:main_category].eql? layer1_cat)
+				if top.first_layer.eql? "x" and
+					(!top.main_category.eql? @base_category) and
+					(!top.main_category.eql? layer1_cat)
 					
 					colors << generalizeColors(top,true)
 					colors << " "
@@ -125,24 +124,24 @@ class PreJavaFormatter
 	end
 
 	def formatBaseClothing()
-		str = ""
-		clothing=Clothing.where(file_name: @base_clothing).first
+    
+		clothing = Top.where(file_name: @base_clothing).first || Bottom.where(file_name: @base_clothing).first
+    puts clothing.main_category
 		baseParams = chooseLayers(clothing)
 		color = generalizeColors(clothing)
-		baseParams.map! {|p| p << " " << color << " "}
-		return baseParams
+    baseParams.map! {|p| p << " " << color << " "}
+    return baseParams
 	end
 
 	def chooseLayers(clothing)
-		if clothing.properties["main_category"].eql? "Casual" ||
-			"Chinos" || "Shorts" || "Suit Pants"
+		if clothing.main_category.eql? "pants" || "shorts"
 			return ["bottoms"]
 		else
 			layers = []
-			if clothing.properties["first_layer"].eql? "x"
+			if clothing.first_layer.eql? "y"
 				layers.append("l1")
 			end
-			if clothing.properties["second_layer"].eql? "x"
+			if clothing.second_layer.eql? "y"
 				layers.append("l2")
 			end
 			# add in other layers when needed
@@ -152,6 +151,7 @@ class PreJavaFormatter
 			# if clothing.first.properties["fourth_layer"].eql? "x"
 			# 	layers.append("l4")
 			# end
+      puts layers
 			return layers
 		end
 	end
@@ -166,18 +166,18 @@ class PreJavaFormatter
 	# double checks that color_1 is actually a color
 	# and returns the correct 
 	def checkColors(clothing, isHash)
-		puts "in checkColors, color = #{clothing[:properties][:color_1]} \n \
-		       file_name = #{clothing[:file_name]}"
-		if clothing[:properties][:color_1]
-			if @bad_colors.include? clothing[:properties][:color_1].downcase
-				return clothing[:properties][:color_2]
+		puts "in checkColors, color = #{clothing.color_1} \n \
+		       file_name = #{clothing.file_name}"
+		if clothing.color_1
+			if @bad_colors.include? clothing.color_1.downcase
+				return clothing.color_2
 			end
-			return clothing[:properties][:color_1]
+			return clothing.color_1
 		else
-			if @bad_colors.include? clothing[:properties]["color_1"].downcase
-				return clothing[:properties]["color_2"]
+			if @bad_colors.include? clothing.color_1
+				return clothing.color_2
 			end
-			return clothing[:properties]["color_1"]
+			return clothing.color_1
 		end
 	end
 
