@@ -66,10 +66,10 @@ class Api::V1::WardrobeController < Api::ApiController
         javaParams = formatter.formatJavaParams
         puts "javaParams = #{javaParams}"
         base_clothing = Top.where(file_name: params[:base_clothing]).first || Bottom.where(file_name: params[:base_clothing]).first
-        javaRunner = JavaRunner.new(javaParams, base_clothing, wardrobe.wardrobe[:tops], 
-        #  wardrobe.wardrobe[:bottoms], color_translator)
-        #result = javaRunner.run
-        ## puts "result = #{result}"
+        javaRunner = JavaRunner.new(javaParams, base_clothing, @user.tops, 
+          @user.bottoms, color_translator)
+        result = javaRunner.run
+        puts "result = #{result}"
         #result.uniq!
         ## puts "result.uniq! result = #{result}"
         #result.sort_by! {|k| k[:score]}
