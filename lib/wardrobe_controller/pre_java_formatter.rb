@@ -13,12 +13,17 @@ class PreJavaFormatter
 
 	def formatJavaParams()
 		javaParams = formatBaseClothing
+    puts "javaParams = #{javaParams}"
 		javaParams.map! do |param|
 			layer = param.split(' ').first.dup
+      puts "layer = #{layer}"
 			param.prepend(" ").prepend(chooseTempCondition)
+      puts "1param = #{param}"
 			param << formatBottoms(layer)
+      puts "2param = #{param}"
 			temp_param,layer1_cat= formatLayer1(layer)
 			param << temp_param
+      puts "3param = #{param}"
 			param << formatLayer2(layer, layer1_cat)
 			param << formatLayer3(layer)
 		end
@@ -49,7 +54,7 @@ class PreJavaFormatter
 			colors = @bottoms.count.to_s + " "
 			for bottom in @bottoms
 				colors << generalizeColors(bottom,true)
-				colors << bottom.color_1.downcase.tr(' ', '_')
+			#	colors << bottom.color_1.downcase.tr(' ', '_')
 				colors << " "
 			end
 			return colors
