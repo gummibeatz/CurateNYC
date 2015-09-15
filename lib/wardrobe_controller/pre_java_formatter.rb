@@ -71,7 +71,7 @@ class PreJavaFormatter
 			for top in @tops
 				# will only add if it has the layer property
 				# and it is not the same main category as the base clothing
-				if top.first_layer.eql? "y" and
+				if top.first_layer and
 					(!top.main_category.eql? @base_category)
 					colors << generalizeColors(top,true)
 					colors << " "
@@ -93,7 +93,7 @@ class PreJavaFormatter
 			for top in @tops
 				# will only add if it has the layer property
 				# and it is not the same main category as the base clothing
-				if top.first_layer.eql? "y" and
+				if top.second_layer and
 					(!top.main_category.eql? @base_category) and
 					(!top.main_category.eql? layer1_cat)
 					
