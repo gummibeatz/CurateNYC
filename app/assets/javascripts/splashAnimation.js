@@ -18,21 +18,33 @@ $(document).ready(function(){
     $arrow.click(function() {
         switch (ct) {
             case 0:
-            $("#text1").css("position","fixed").animate({top: 70}); 
-            $("#text2").css("position","fixed").animate({top: 100});
+            $("#text1").css("position","fixed").animate({top: 240}); 
+            $("#text2").css("position","fixed").animate({top: 300});
             ct+=1;
             break;
 
             case 1:
             $("#text1").css("position","fixed").animate({top: -200});
             $("#text2").css("position","fixed").animate({top: -100});
-            $("#text3").css("position","fixed").animate({top: 100});
+            $("#text3").css("position","fixed").animate({top: 300});
             ct+=1;
             break;
 
             case 2:
-            $("#text3").css("position","fixed").animate({top: -100});
-            $("#email-box").css("position","fixed").animate({top: 200});
+            $("#text3").css("position","fixed").animate({top: -200});
+            $("#text4").css("position","fixed").animate({top: 300});
+            ct+=1;
+            break;
+
+            case 3:
+            $("#text4").css("position","fixed").animate({top: -200});
+            $("#text5").css("position","fixed").animate({top: 300});
+            ct+=1;
+            break;
+
+            case 4:
+            $("#text5").css("position","fixed").animate({top: -200});
+            $("#email-box").css("position","fixed").animate({top: 300});
             $arrow.fadeOut();
             $("#timer").delay(500).fadeIn();
             ct+=1;
@@ -54,14 +66,20 @@ $(document).ready(function(){
                 if (counter === 0) {
                     $timer.fadeOut()
                     $("#email-box").fadeOut()
-                    clearInterval(counter);
+                    // clearInterval(counter);
                 }
                 
+                if (counter < 0) {
+                    $("#try-again").css('visibility','visible').hide().fadeIn('slow');
+                }
+
+
+
               }, 1000);
             break;
 
             default:
-            alert('no more screens');
+            alert('You pressed the arrows too goddamned fast bro. Slow your roll.');
             break;
         }
     });

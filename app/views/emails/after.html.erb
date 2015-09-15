@@ -5,18 +5,16 @@
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
     <%= stylesheet_link_tag 'application.css' %>
-
+    <%= csrf_meta_tag %>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag "splashAnimation" %>
+    <meta name="google-site-verification" content="jjAXwigotxYHIOS-Qztrr-xzyPahg7sBqodWNQJK0nY" />
   </head>
 
-  <body>
-    <!--Facebook Script-->
-    <div class="jumbotron">
-      <div class="container">
-        <div class = "text-center">
-            <h1>curate</h1>
-            <p id="thanks">Thank you for signing up! We are currently working hard on Curate and should be releasing the app soon! In the mean time, help us meet our goal of $10k on Kickstarter by August 15th. We have some awesome rewards that will make donating worth your while. Head over to Kickstarter and check us out: <a href="https://www.kickstarter.com/projects/curate/1304299240?token=ff24a960">Curate's Kickstarter</a></p>
-        </div>
-      </div>
-    </div> 
-  </body>
+  <body style="background-color:black">
+
+  <div id="complete">You're on the list, bruh. Hope you're ready to get like Soulja Boy and turn your swag on.</div>
+
+</body>
 </html>

@@ -17,15 +17,19 @@
   <div id="splash-container"> 
     <div id="text1" class="splash-text">Hey guys, tired of looking like shit?</div>
     <div id="text2" class="splash-text">Don't worry. We got you.</div>
-    <div id="text3" class="splash-text">Here at Curate, we'll put together dope outfits based on your pre-existing wardrobe. The best part? You don't have to take a single picture.</div>
+    <div id="text3" class="splash-text">Every guy has the raw wardrobe components to look dope.</div>
+    <div id="text4" class="splash-text">Curate will dress you using pieces in your existing wardrobe. Instantly.</div>
+    <div id="text5" class="splash-text">The best part? You don't have to take a single fucking picture.</div>
+
 
     <div id="email-box" class="splash-text">
       <%= form_for(@email) do |f| %>
-        <%= f.text_field :email, :placeholder => "Your.Email@email.com", :size => "35", :class => "textfield"%><%=f.submit "Signup", :class => "submit"%>
+        <%= f.text_field :email, :placeholder => "derek.zoolander@email.com", :size => "40", :class => "textfield"%><%=f.submit "Signup", :class => "submit"%>
       <%end%>
     </div>
 
     <div id ="timer">10</div>
 
     <div class="arrow bounce"></div>
+    <div id="try-again" class="splash-text">Too slow bruh. Try again. Refresh the page and type faster this time.</div>
   </div>
