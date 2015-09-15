@@ -18,33 +18,33 @@ $(document).ready(function(){
     $arrow.click(function() {
         switch (ct) {
             case 0:
-            $("#text1").css("position","fixed").animate({top: 240}); 
-            $("#text2").css("position","fixed").animate({top: 300});
+            $("#text1").css("position","fixed").animate({top: "25%"}); 
+            $("#text2").css("position","fixed").animate({top: "35%"});
             ct+=1;
             break;
 
             case 1:
             $("#text1").css("position","fixed").animate({top: -200});
             $("#text2").css("position","fixed").animate({top: -100});
-            $("#text3").css("position","fixed").animate({top: 300});
+            $("#text3").css("position","fixed").animate({top: "35%"});
             ct+=1;
             break;
 
             case 2:
             $("#text3").css("position","fixed").animate({top: -200});
-            $("#text4").css("position","fixed").animate({top: 300});
+            $("#text4").css("position","fixed").animate({top: "35%"});
             ct+=1;
             break;
 
             case 3:
             $("#text4").css("position","fixed").animate({top: -200});
-            $("#text5").css("position","fixed").animate({top: 300});
+            $("#text5").css("position","fixed").animate({top: "35%"});
             ct+=1;
             break;
 
             case 4:
             $("#text5").css("position","fixed").animate({top: -200});
-            $("#email-box").css("position","fixed").animate({top: 300});
+            $("#email-box").css("position","fixed").animate({top: "35%"});
             $arrow.fadeOut();
             $("#timer").delay(500).fadeIn();
             ct+=1;
