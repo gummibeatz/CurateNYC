@@ -22,6 +22,7 @@ class PreJavaFormatter
 			param << formatLayer2(layer, layer1_cat)
 			param << formatLayer3(layer)
 		end
+    puts "javaParams = #{javaParams}"
 		return javaParams
 	end
 
@@ -48,7 +49,7 @@ class PreJavaFormatter
 			colors = @bottoms.count.to_s + " "
 			for bottom in @bottoms
 				colors << generalizeColors(bottom,true)
-				# colors << bottom[:properties][:color_1].downcase.tr(' ', '_')
+				colors << bottom.color_1.downcase.tr(' ', '_')
 				colors << " "
 			end
 			return colors
@@ -82,12 +83,12 @@ class PreJavaFormatter
 		if layer.eql? "l2"
 			return "0 "
 		else
-			colors = ""
+			colors = " "
 			ct = 0
 			for top in @tops
 				# will only add if it has the layer property
 				# and it is not the same main category as the base clothing
-				if top.first_layer.eql? "x" and
+				if top.first_layer.eql? "y" and
 					(!top.main_category.eql? @base_category) and
 					(!top.main_category.eql? layer1_cat)
 					
@@ -106,12 +107,12 @@ class PreJavaFormatter
 		if layer.eql? "l3"
 			return "0 "
 		else
-			colors = ""
+			colors = " "
 			ct = 0
 			for top in @tops
 				# will only add if it has the layer property
 				# and it is not the same main category as the base clothing
-				if top[:properties][:first_layer].eql? "x" and
+				if top[:properties][:first_layer].eql? "y" and
 					(!top[:properties][:main_category].eql? @base_category)
 					
 					colors << generalizeColors(top,true)
@@ -138,10 +139,10 @@ class PreJavaFormatter
 			return ["bottoms"]
 		else
 			layers = []
-			if clothing.first_layer.eql? "y"
+			if clothing.first_layer
 				layers.append("l1")
 			end
-			if clothing.second_layer.eql? "y"
+			if clothing.second_layer
 				layers.append("l2")
 			end
 			# add in other layers when needed
