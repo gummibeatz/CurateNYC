@@ -109,7 +109,7 @@ class JavaRunner
       for b in bottoms
         if l2s.count>0 and !category.eql? "light layer"
           for l2 in l2s
-            if l2.main_category != l1.main_category
+            if l2.main_category != category
               outfit = [b.file_name,@base_file_name,l2.file_name]
               outfits << outfit
             else
