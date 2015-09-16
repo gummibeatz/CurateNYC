@@ -2,6 +2,7 @@ class Bottom < ActiveRecord::Base
 
   scope :priorities, -> { where(priority: true) }
   scope :in_batch_number, ->(number) { where(batch_number: number) }
+  scope :with_colors, ->(colors) {where(color_1: colors)}
 
   enum main_category: [:pants, :shorts]
   

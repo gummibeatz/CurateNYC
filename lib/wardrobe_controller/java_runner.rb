@@ -72,9 +72,15 @@ class JavaRunner
     #   l2_colors.map! {|x| puts "l2_color is #{x}"}
     # end
     puts "l2_colors = #{l2_colors}"
-    bottoms = getClothesWithAttributes(bottom_colors,"bottoms")
-	  l1s = getClothesWithAttributes(l1_colors,"l1")
-    l2s = getClothesWithAttributes(l2_colors,"l2")
+    bottoms = @bottoms.with_colors(bottom_colors)
+    puts "bottom_color = #{bottom_colors}"
+    puts "bottoms = #{bottoms.count}"
+    l1s = @tops.with_colors_and_layer_1(l1_colors)
+    l2s = @tops.with_colors_and_layer_2(l2_colors)
+    
+   # bottoms = getClothesWithAttributes(bottom_colors,"bottoms")
+	 # l1s = getClothesWithAttributes(l1_colors,"l1")
+   # l2s = getClothesWithAttributes(l2_colors,"l2")
     outfits = []
     print("bottoms are #{bottoms}\n")
     print("l1s are #{l1s}\n")
@@ -86,29 +92,29 @@ class JavaRunner
     case orig_layer
     when "bottoms"
       for l1 in l1s
-        category = Clothing.where(file_name: l1).first[:properties]["main_category"].downcase
+        category = l1.main_category 
         if l2s.count>0 and !category.eql? "light layer"
           for l2 in l2s
-            outfit = [@base_file_name, l1, l2]
+            outfit = [@base_file_name, l1.file_name, l2.file_name]
             outfits << outfit
           end
         else
-          outfit = [@base_file_name, l1, "NA"]
+          outfit = [@base_file_name, l1.file_name, "NA"]
           outfits << outfit
         end
       end
     when "l1"
       puts "it's l1"
-      category = @base_clothing[:properties]["main_category"].downcase
+      category = @base_clothing.main_category
       for b in bottoms
         if l2s.count>0 and !category.eql? "light layer"
           for l2 in l2s
-            outfit = [b,@base_file_name,l2]
+            outfit = [b.file_name,@base_file_name,l2.file_name]
             outfits << outfit
             puts "inside l1 innerest loop \noutfit=#{outfit}"
           end
         else
-          outfit = [b, @base_file_name, "NA"]
+          outfit = [b.file_name, @base_file_name, "NA"]
           outfits << outfit
         end
       end
@@ -117,15 +123,15 @@ class JavaRunner
       for b in bottoms
         if l1 != nil
           for l1 in l1s
-            category = Clothing.where(file_name: l1).first[:properties]["main_category"].downcase
+            category = l1.main_category
             # don't want light layer under anything
             if !category.eql? "light layer"
-              outfit = [b,l1,@base_file_name]
+              outfit = [b.file_name,l1.file_name,@base_file_name]
               outfits << outfit
             end
           end
         else
-          outfit = [b, "NA", @base_file_name]
+          outfit = [b.file_name, "NA", @base_file_name]
           outfits << outfit
         end
       end
@@ -174,6 +180,7 @@ class JavaRunner
   def getColor(clothes)
     # puts clothes[:properties][:color_1]
     not_colors =  ["printed", "check","gingham","striped","dots","light wash","chambray","acid wash"]
+    puts "clothes = #{clothes}"
     if not_colors.include? clothes[:properties][:color_1].downcase
         return clothes[:properties][:color_2]
     end

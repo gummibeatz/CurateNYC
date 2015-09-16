@@ -2,6 +2,9 @@ class Top < ActiveRecord::Base
 
   scope :priorities, -> { where(priority: true) }
   scope :in_batch_number, ->(number) { where(batch_number: number) }
+  scope :with_colors, ->(colors) {where(color_1: colors)}
+  scope :with_colors_and_layer_1, ->(colors) {where(color_1: colors).where(first_layer: true)}
+  scope :with_colors_and_layer_2, ->(colors) {where(color_1: colors).where(second_layer: true)}
 
   enum main_category: [:light_layer, :collared_shirt, :long_sleeve_shirt, :short_sleeve_shirt, :jacket]
 
