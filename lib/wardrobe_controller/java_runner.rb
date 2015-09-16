@@ -131,7 +131,7 @@ class JavaRunner
             puts l1.main_category
             category = l1.main_category
             # don't want light layer under anything
-            if !category.eql? "light layer" && (category != @base_file_name.main_category)
+            if !category.eql? "light layer" && (category != @base_clothing.main_category)
               outfit = [b.file_name,l1.file_name,@base_file_name]
               outfits << outfit
             else 
