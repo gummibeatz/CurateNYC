@@ -24,7 +24,7 @@
 }
 
 #text1 {
-  top: 300px;
+  top: 280px;
 }
 
 #text2 {
@@ -45,7 +45,7 @@
 
 #timer {
   position: absolute;
-  bottom: 340px;
+  top: 60%;
   width: 100%;
   font-size: 50px;
   display:none;
@@ -56,9 +56,9 @@
 #email-box {
   position: absolute;
   top: 120%;
-  height: 500px;
-  left: -10%;
-  width: 120%;
+  height: 2em;
+  left: -25%;
+  width: 150%;
 }
 
 #email-box .submit {
@@ -74,7 +74,7 @@
   border-left-style: solid;
   border-left-width: 1px;
   height: 2em;
-  width: 10%;
+  width: 15%;
   padding: 0;
   font-size: 30px;
 
@@ -118,7 +118,7 @@
   font-size: 40px;
   text-align: center;
   /*border: 2px solid white;*/
-  top:300px;
+  top:35%;
   left: 10%;
   color: white;
   font-family: "Courier New";
@@ -133,7 +133,7 @@
   line-height: 45px;
   font-size: 40px;
   text-align: center;
-  top:280px;
+  top:35%;
   left: 10%;
   color: white;
   font-family: "Courier New";
