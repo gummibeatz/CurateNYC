@@ -109,8 +109,13 @@ class JavaRunner
       for b in bottoms
         if l2s.count>0 and !category.eql? "light layer"
           for l2 in l2s
-            outfit = [b.file_name,@base_file_name,l2.file_name]
-            outfits << outfit
+            if l2.main_category != l1.main_category
+              outfit = [b.file_name,@base_file_name,l2.file_name]
+              outfits << outfit
+            else
+              outfit = [b.file_name,@base_file_name, "NA"]
+              outfits << outfit
+            end
             puts "inside l1 innerest loop \noutfit=#{outfit}"
           end
         else
@@ -126,8 +131,11 @@ class JavaRunner
             puts l1.main_category
             category = l1.main_category
             # don't want light layer under anything
-            if !category.eql? "light layer"
+            if !category.eql? "light layer" && (category != @base_file_name.main_category)
               outfit = [b.file_name,l1.file_name,@base_file_name]
+              outfits << outfit
+            else 
+              outfit = [b.file_name, "NA", @base_file_name]
               outfits << outfit
             end
           end
