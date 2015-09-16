@@ -83,7 +83,7 @@ class JavaRunner
    # l2s = getClothesWithAttributes(l2_colors,"l2")
     outfits = []
     print("bottoms are #{bottoms}\n")
-    print("l1s are #{l1s}\n")
+    print("l1s count is #{l1s.count}\n")
     print("l2s are #{l2s}\n")
 
 
@@ -121,8 +121,9 @@ class JavaRunner
     when "l2"
       puts "it's l2"
       for b in bottoms
-        if l1 != nil
+        if l1s.count > 0
           for l1 in l1s
+            puts l1.main_category
             category = l1.main_category
             # don't want light layer under anything
             if !category.eql? "light layer"
