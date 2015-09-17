@@ -68,23 +68,18 @@ class Api::V1::WardrobeController < Api::ApiController
         base_clothing = Top.where(file_name: params[:base_clothing]).first || Bottom.where(file_name: params[:base_clothing]).first
         javaRunner = JavaRunner.new(javaParams, base_clothing, @user.tops, 
           @user.bottoms, color_translator)
-        result = javaRunner.run
-        puts "result = #{result}"
-        result.uniq!
-        # puts "result.uniq! result = #{result}"
-        result.sort_by! {|k| k[:score]}
-        result.reverse!
-        if result.eql? "NA"
+        results = javaRunner.run
+        formatter = PostJavaFormatter.new(results, base_clothing)
+        
+        if results.eql? "NA"
           render :status=>200,
                  :json=>{:matches => "NA", :message => "NA"}
         else
-        matches = {:matches => result, :message => "Success"}
+          matches = {:matches => formatter.create_outfits, :message => "Success"}
         
-        render :status=>200,
-               :json=>matches
+          render :status=>200,
+                 :json=>matches
         end
-       # render :status=>200,
-       #         :json => {:matches => nil, :message => "Success"}
       else
         logger.info("Failed connection to wardrobe/matches json, a wardrobe cannot be found by that authentication_token.")
         render :status=>400,

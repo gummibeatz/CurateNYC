@@ -10,37 +10,40 @@ class JavaRunner
 	end
 
 	def run
-		outfits = []
-
+		results = []
+    
 		@java_params.each do |param|
-      v = `java -cp ./java_algos ScoringAlgo #{param}`
       orig_layer = param.split(' ')[1]
-
+      v = [orig_layer, `java -cp ./java_algos ScoringAlgo #{param}`] 
       # puts layer
       puts param
 
       # if no results and if the base clothes was run as a first layer
       # then try again with lowest degree of matches(2)
-      if v.empty? and ((orig_layer.eql? "l1") or (orig_layer.eql? "bottoms"))
+      if v[1].blank? and ((orig_layer.eql? "l1") or (orig_layer.eql? "bottoms"))
         puts "rerunning due to no results on first run as l1"
         v = `java -cp ./java_algos ScoringAlgo #{reformatForMatch2(param)}`
       end
+      results.append(v)
+    end
+    puts "results = #{results}"
+    return results
       
-      if !v.empty?
-        for out in v.split("\n")
-          results = assembleOutfits(out, orig_layer)
-          if results then outfits << results end
-        end
-      end
-    end
+  #    if !v.empty?
+  #      for out in v.split("\n")
+  #        results = assembleOutfits(out, orig_layer)
+  #        if results then outfits << results end
+  #      end
+  #    end
+  #  end
 
-    puts "!!!!!! in java_runner.run !!!!"
-    puts "outfits = #{outfits} "
+  #  puts "!!!!!! in java_runner.run !!!!"
+  #  puts "outfits = #{outfits} "
 
-    if outfits.empty?
-      return "NA"
-    end
-    return outfits
+  #  if outfits.empty?
+  #    return "NA"
+  #  end
+  #  return outfits
 	end
 
 	private

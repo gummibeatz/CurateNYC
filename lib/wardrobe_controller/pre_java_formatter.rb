@@ -33,6 +33,7 @@ class PreJavaFormatter
 
 	private
 	def chooseTempCondition()
+    puts "@temp = #{@temp}"
 		case @temp.to_i
 		when -100..49
 			return "cold"
