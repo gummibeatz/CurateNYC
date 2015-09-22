@@ -75,7 +75,7 @@ class Api::V1::WardrobeController < Api::ApiController
           render :status=>200,
                  :json=>{:matches => "NA", :message => "NA"}
         else
-          matches = {:matches => formatter.create_outfits, :message => "Success"}
+          matches = {:matches => results, :message => "Success"}
         
           render :status=>200,
                  :json=>matches
