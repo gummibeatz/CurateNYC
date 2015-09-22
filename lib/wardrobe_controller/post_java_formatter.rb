@@ -15,6 +15,7 @@ class PostJavaFormatter
     format_result
     puts "formatted_results = #{@formatted_results}"
     assemble_outfits
+    puts "outfits = #{@outfits}"
   end
 
   def assemble_outfits
@@ -29,21 +30,24 @@ class PostJavaFormatter
         #loop through the results to put filenames
         match[1..-1].each_with_index do |layer, i|
           if i != LAYER_INDEX[orig_layer]
-            if i = 0
+            if i = 0 and Bottom.where(color_1: layer.gsub(" ", "_")).exists?
               outfit[i] = Bottom.where(color_1: layer.gsub(" ","_")).first.file_name  
             else
-              outfit[i] = Top.where(color_1: layer.gsub(" ","_")).first.file_name
+              if Top.where(color_1: layer.gsub(" ", "_")).exists?
+                outfit[i] = Top.where(color_1: layer.gsub(" ","_")).first.file_name
+              end
             end
           end
         end
         puts "match = #{match}"
       end
       outfit[LAYER_INDEX[orig_layer]] = @base_clothing.file_name
-      
+      @outfits << outfit  
       
 
     end
     puts "#{"=" * 5} out of assemble outfits #{"=" * 5}"
+    @outfits
     
   end
   
