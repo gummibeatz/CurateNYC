@@ -54,7 +54,8 @@ class ColorTranslator
 		@color_translator["taupe"] = ["light_brown"]
 		@color_translator["teal"] = ["blue"]
 		@color_translator["turquoise"] = ["light_blue"]
-		@color_translator["white"] = ["white"]
+		@color_translator["white"] = ["white","off_white"]
+    @color_translator["off_white"] = ["white"]
 		@color_translator["yellow"] = ["yellow"]
 		@color_translator["orange"] = ["orange"]
 	end
