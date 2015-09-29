@@ -7,9 +7,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :remember_me, :encrypted_password, :preferences
   
   has_many :user_tops
-  has_many :tops, :through => :user_tops
+  has_many :tops, -> {distinct}, :through => :user_tops
   has_many :user_bottoms
-  has_many :bottoms, :through => :user_bottoms
+  has_many :bottoms, -> {distinct}, :through => :user_bottoms
   has_many :outfits
   
   serialize :preferences

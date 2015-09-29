@@ -7,7 +7,7 @@ class Bottom < ActiveRecord::Base
   enum main_category: [:pants, :shorts]
   
   has_many :user_bottoms
-  has_many :users, :through => :user_bottoms
+  has_many :users, -> {distinct}, :through => :user_bottoms
  
   validates :file_name, uniqueness: true
 
