@@ -41,6 +41,11 @@ group :test, :development do
   gem "sqlite3"
   # gem "guard-rspec", require: false
   gem "thin"
+  gem 'rack-mini-profiler'
+  gem "flamegraph"
+  gem 'ruby-prof'
+
+  gem 'byebug'
 end
 
 group :production do

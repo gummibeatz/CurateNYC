@@ -51,12 +51,15 @@ class PreJavaFormatter
 		if layer.eql? "bottoms"
 			return "0 "
 		else
-			colors = @bottoms.count.to_s + " "
+      ct = 0
+      colors =""
 			for bottom in @bottoms
 				colors << generalizeColors(bottom,true)
 			#	colors << bottom.color_1.downcase.tr(' ', '_')
 				colors << " "
+        ct += 1
 			end
+      colors.prepend(" ").prepend(ct.to_s)
 			return colors
 		end
 	end
@@ -118,8 +121,7 @@ class PreJavaFormatter
 				# will only add if it has the layer property
 				# and it is not the same main category as the base clothing
 				if top[:properties][:first_layer].eql? "y" and
-					(!top[:properties][:main_category].eql? @base_category)
-					
+					(!top[:properties][:main_category].eql? @base_category)	
 					colors << generalizeColors(top,true)
 					colors << " "
 					ct += 1

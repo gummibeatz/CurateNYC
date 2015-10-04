@@ -25,25 +25,38 @@ class JavaRunner
         puts "rerunning due to no results on first run as l1"
         v = `java -cp ./java_algos ScoringAlgo #{reformatForMatch2(param)}`
       end
-      
+
       if !v.empty?
+        max_score = get_max_score(v)
         for out in v.split("\n")
+          if out.split(' ')[0].to_i != max_score then next end
           results = assembleOutfits(out, orig_layer)
           if results then outfits << results end
+          if outfits.size > 10 then break end #get out before too many outfits
         end
       end
     end
 
     puts "!!!!!! in java_runner.run !!!!"
-    puts "outfits = #{outfits} "
+  #  puts "outfits = #{outfits} "
 
     if outfits.empty?
       return "NA"
     end
+
     return outfits
 	end
 
 	private
+
+  def get_max_score(results)
+    max_score = 0
+    for out in results.split("\n")
+      if out.split(' ')[0].to_i > max_score then max_score = out.split(' ')[0].to_i end
+    end
+    return max_score.to_i
+  end
+
 	def reformatForMatch2(param)
 		# hot weather will only ever do a match2
 		puts "in reformat"
@@ -51,12 +64,12 @@ class JavaRunner
   end
 
 	def assembleOutfits(out, orig_layer)
-    puts"in assemble outfits \n========\n\n"
+   # puts"in assemble outfits \n========\n\n"
 		score = out.split(' ')[0]
 	 	colors = out.split(' ')[1..-1]
     matches = Hash.new
     matches[:score] = score
-    puts "matches[:score] = #{score}"
+   # puts "matches[:score] = #{score}"
 	 	# Should be n nested loops, for n clothes 
     # exhaustive search
     # first loop through colors array
@@ -66,15 +79,15 @@ class JavaRunner
     # if l1_colors.size > 0
     #   l1_colors.map! {|x| puts "l1_color is #{x}"}
     # end
-    puts "l1_colors = #{l1_colors}"
+  #  puts "l1_colors = #{l1_colors}"
     l2_colors = Array(@color_translator.specify(colors[2]))
     # if l2_colors.size > 0
     #   l2_colors.map! {|x| puts "l2_color is #{x}"}
     # end
-    puts "l2_colors = #{l2_colors}"
+  #  puts "l2_colors = #{l2_colors}"
     bottoms = @bottoms.with_colors(bottom_colors)
     puts "bottom_color = #{bottom_colors}"
-    puts "bottoms = #{bottoms.count}"
+    puts "bottoms = #{bottoms.size}"
     l1s = @tops.with_colors_and_layer_1(l1_colors)
     l2s = @tops.with_colors_and_layer_2(l2_colors)
     
@@ -82,21 +95,23 @@ class JavaRunner
 	 # l1s = getClothesWithAttributes(l1_colors,"l1")
    # l2s = getClothesWithAttributes(l2_colors,"l2")
     outfits = []
-    print("bottoms are #{bottoms}\n")
-    print("l1s count is #{l1s.count}\n")
-    print("l2s are #{l2s}\n")
+   # print("bottoms are #{bottoms}\n")
+   # print("l1s count is #{l1s.size}\n")
+   # print("l2s are #{l2s}\n")
 
 
-    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+   # puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
     case orig_layer
     when "bottoms"
       for l1 in l1s
-        category = l1.main_category 
-        if l2s.count>0 and !category.eql? "light layer"
+        if outfits.size > 0 then next end  # put in to reduce run time and break out when more than 10 outfits
+        category = l1.main_category
+        if l2s.size>0 and !category.eql? "light layer"
           for l2 in l2s
             outfit = [@base_file_name, l1.file_name, l2.file_name]
             outfits << outfit
+           # next     # break on first outfit with this color match
           end
         else
           outfit = [@base_file_name, l1.file_name, "NA"]
@@ -104,19 +119,32 @@ class JavaRunner
         end
       end
     when "l1"
-      puts "it's l1"
+   #   puts "it's l1"
       category = @base_clothing.main_category
       for b in bottoms
-        if l2s.count>0 and !category.eql? "light layer"
+        puts(b.file_name)
+        puts(outfits.size)
+        
+
+        if l2s.size>0 and !category.eql? "light layer"
+          if outfits.size > 0 then next end  # put in to reduce run time and break out when more than 10 outfits
           for l2 in l2s
-            if l2.main_category != category
+
+            
+              if l2.main_category != category
               outfit = [b.file_name,@base_file_name,l2.file_name]
               outfits << outfit
+
+              
+        #      break  # break on first outfit with this color match
             else
+
+              
               outfit = [b.file_name,@base_file_name, "NA"]
               outfits << outfit
+         #     break # break on first outfit with this color match
             end
-            puts "inside l1 innerest loop \noutfit=#{outfit}"
+ #           puts "inside l1 innerest loop \noutfit=#{outfit}"
           end
         else
           outfit = [b.file_name, @base_file_name, "NA"]
@@ -124,19 +152,22 @@ class JavaRunner
         end
       end
     when "l2"
-      puts "it's l2"
+   #   puts "it's l2"
       for b in bottoms
-        if l1s.count > 0
+        if l1s.size > 0
+          if outfits.size > 0 then next end    # put in to reduce run time and break out when more than 10 outfits
           for l1 in l1s
-            puts l1.main_category
+   #         puts l1.main_category
             category = l1.main_category
             # don't want light layer under anything
             if !category.eql? "light layer" && (category != @base_clothing.main_category)
               outfit = [b.file_name,l1.file_name,@base_file_name]
               outfits << outfit
+      #        break # break on first outfit with this color match
             else 
               outfit = [b.file_name, "NA", @base_file_name]
               outfits << outfit
+     #         break # break on first outfit with this color match
             end
           end
         else
@@ -146,8 +177,8 @@ class JavaRunner
       end
     end
 
-    puts"outfits = #{outfits}"
-    puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``"
+  #  puts"outfits = #{outfits}"
+  #  puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``"
     if outfits.empty?
       return nil
     end

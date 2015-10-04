@@ -60,16 +60,30 @@ class Api::V1::WardrobeController < Api::ApiController
         temp = params[:temperature]
         base_clothing = params[:base_clothing]
         color_translator = ColorTranslator.new()
-        
+       
+        RubyProf.start
         formatter = PreJavaFormatter.new(params[:temperature],params[:base_clothing],
           @user.tops, @user.bottoms, color_translator)
         javaParams = formatter.formatJavaParams
+        prof_results = RubyProf.stop
+        File.open("#{Rails.root}/tmp/profiling/PreJavaFormatter", 'w') do |file|
+          RubyProf::FlatPrinter.new(prof_results).print(file)
+        end
+        
+        
         puts "javaParams = #{javaParams}"
         base_clothing = Top.where(file_name: params[:base_clothing]).first || Bottom.where(file_name: params[:base_clothing]).first
+        
+        RubyProf.start
         javaRunner = JavaRunner.new(javaParams, base_clothing, @user.tops, 
           @user.bottoms, color_translator)
         result = javaRunner.run
-        puts "result = #{result}"
+        prof_results = RubyProf.stop
+        File.open("#{Rails.root}/tmp/profiling/JavaRunner", 'w') do |file|
+          RubyProf::FlatPrinter.new(prof_results).print(file)
+        end
+
+     #   puts "result = #{result}"
         result.uniq!
         # puts "result.uniq! result = #{result}"
         result.sort_by! {|k| k[:score]}

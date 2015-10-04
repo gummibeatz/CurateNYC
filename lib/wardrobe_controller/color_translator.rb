@@ -6,13 +6,13 @@ class ColorTranslator
 	end
 
 	def generalize(color)
-		puts "in generalize, color = #{color}\n========="
+#		puts "in generalize, color = #{color}\n========="
 		return @color_translator[color].first
 	end
 
 	def specify(color)
 		colors = @color_translator[color]
-		puts "colors in colors translator = #{colors}"
+#		puts "colors in colors translator = #{colors}"
 		return @color_translator[color]
 	end
 
