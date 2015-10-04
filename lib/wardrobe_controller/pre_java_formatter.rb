@@ -35,9 +35,9 @@ class PreJavaFormatter
 	def chooseTempCondition()
 		case @temp.to_i
 		when -100..49
-			return "cold"
+			return "warm"
 		when 50..59
-			return "brisk"
+			return "warm"
 		when 60..69
 			return "warm"
 		when 70..200
