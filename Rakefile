@@ -74,6 +74,7 @@ def update_urls(shouldTest = false)
   end
   if shouldTest == true
     File.open("missingClothes.txt", 'w') do |f|
+      f.puts("Timestamp, Name, Phone, Amount, Message")
       missingitems.each do |item|
         f.puts(item)
       end

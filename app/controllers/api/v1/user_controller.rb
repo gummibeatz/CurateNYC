@@ -41,4 +41,9 @@ class Api::V1::UserController < Api::ApiController
       return
     end
   end
+
+  def create
+    if params[:authentication_token ] != nil
+    end
+  end
 end
