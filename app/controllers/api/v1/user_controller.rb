@@ -23,6 +23,7 @@ class Api::V1::UserController < Api::ApiController
       return
     end
   end
+
   def update
     if params[:authentication_token] != nil
       if User.find_by_authentication_token(authentication_token = params[:authentication_token])
@@ -43,7 +44,15 @@ class Api::V1::UserController < Api::ApiController
   end
 
   def create
-    if params[:authentication_token ] != nil
+    @user = User.new({
+            email: params[:email],
+            password: params[:password]
+             })
+    if @user.save!
+      respond_to do |format|
+        msg = { :status => :ok, :curate_auth_token => @user.authentication_token }
+        format.json { render :json => msg }
+      end
     end
   end
 end

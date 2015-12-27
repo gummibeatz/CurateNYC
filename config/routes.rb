@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       resources :user,via: [:get, :post]
       resources :wardrobe,via: [:get, :post]
       post '/outfit/:id/edit', to: 'outfit#update'
+      post '/user/new', to: 'user#create'
       post '/user/:id/edit', to: 'user#update'
       post '/like/:id/edit', to: 'like#update'
       post '/wardrobe/:id/edit', to: 'wardrobe#update'
