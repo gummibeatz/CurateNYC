@@ -55,4 +55,27 @@ class Api::V1::UserController < Api::ApiController
       end
     end
   end
+
+  def login
+    if params[:email] != nil && params[:password] != nil
+      @user = User.find_by_email(params[:email])
+      if @user != nil
+        if @user.valid_password?(params[:password])
+          respond_to do |format|
+            msg = { :status => :ok, :curate_auth_token => @user.authentication_token }
+            format.json { render :json => msg }
+          end 
+        else 
+          render :status=>400,
+            :json=>{:message=>"incorrect email or password"}
+        end
+      end
+    else
+      logger.info("Failed connection to user/edit json, no authentication token posted.")
+      render :status=>400,
+            :json=>{:message=>"incorrect email"}
+      return
+    end
+
+  end
 end
