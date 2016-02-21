@@ -5,14 +5,19 @@ class Api::V1::UserController < Api::ApiController
   #   render json:@current_user
   # end
   def index
-    if params[:authentication_token] != nil
+    if params[:authentication_token].present? || params[:uid].present?
       if User.find_by_authentication_token(authentication_token = params[:authentication_token])
         @user = User.find_by_authentication_token(authentication_token = params[:authentication_token])
         logger.info("Successful #{@user.name} connection to user json.")
         render :status =>200,
                :json=>@user
+      elsif User.find_by_uid(params[:uid])
+        @user = User.find_by_uid(params[:uid])
+        logger.info("Successful #{@user.name} connection to user json.")
+        render :status =>200,
+               :json=>@user
       else
-        logger.info("Failed connection to user json, a user cannot be found by that authentication_token.")
+        logger.info("Failed connection to user json, a user cannot be found by that authentication_token or uid.")
         render :status =>200,
                :json=>{:message=>"Failed connection to user json, a user cannot be found by that authentication_token."}
       end
