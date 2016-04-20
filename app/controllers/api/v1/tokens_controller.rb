@@ -61,6 +61,7 @@ class Api::V1::TokensController  < ApplicationController
               :use_ssl => url.scheme == 'https') {|http| http.request req}
       return res
     end
+
     def create_auth(fb_uid, fb_email, fb_name, fb_gender)
       return {:provider=>"facebook",
               :uid=>fb_uid,

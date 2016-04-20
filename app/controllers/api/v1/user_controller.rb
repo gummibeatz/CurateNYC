@@ -34,6 +34,7 @@ class Api::V1::UserController < Api::ApiController
       if User.find_by_authentication_token(authentication_token = params[:authentication_token])
         @user = User.find_by_authentication_token(authentication_token = params[:authentication_token])
         @user.preferences = params[:preferences]
+        @user.fb_access_token = params[:fbAccessToken]
         @user.save!
       else
         logger.info("Failed connection to user/edit json, a user cannot be found by that authentication_token.")
